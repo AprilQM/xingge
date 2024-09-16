@@ -1,0 +1,73 @@
+body{
+    background-color: #f6f6f6;
+}
+.FilesButton{
+    background-color: initial;
+    font-size: 30px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 10px 0 0 10px;
+    font-weight: bold;
+    color: #1e56a0;
+    text-decoration: none;
+    width: 60%;
+    text-align: left;
+}
+.FilesButton:hover{
+    color: #163172;
+}
+.FilesButton span{
+    font-weight: normal;
+    font-size: 80px;
+    margin: 0 80px 0 0;
+}
+/*手机适配*/
+@media screen and (max-width: 1220px) {
+    #adBox{
+        display: none;
+    }
+    .FilesButton{
+        font-size: 15px;
+        width: 30%;
+        white-space: nowrap;
+        text-align: left;
+    }
+    .FilesButton span{
+        font-size: 30px;
+        margin: 0 10px 0 0;
+    }
+}
+#FilesBox{
+    position: fixed;
+    height: calc(100% - 150px);
+    width: calc(100% - 60px);
+    top: 150px;
+    left: 60px;
+    overflow: auto;
+}
+#UnderLight{
+    color: #d6e4f0;
+    text-align: center;
+    margin: 80px 0 30px 0 ;
+    width: 100%;
+}
+#backButton{
+    background-color: initial;
+    font-weight: bold;
+    font-size: 60px;
+    color: #1e56a0;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    position: absolute;
+    left: 20px;
+    top: 150px;
+    cursor: pointer;
+    z-index: 10;
+    transform: scale(0);
+}
+#backButton:hover{
+    color: #163172;
+}

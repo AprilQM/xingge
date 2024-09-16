@@ -1,0 +1,573 @@
+#background{
+    width: 100%;
+    height: calc(100% - 60px);
+    position: fixed;
+    top: 60px;
+    z-index: 1;
+    background-color: #f6f6f6;
+}
+#menu{
+    position: fixed;
+    background-color: #1e56a0;
+    height: 100%;
+    width: 200px;
+}
+.li{
+    margin: 0 0 30px 0;
+    padding: 20px 30px 20px 50px;
+    transition: 0.3s;
+}
+.li:hover{
+    background-color: #d6e4f0;
+}
+.menu_button{
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    color: #f6f6f6;
+    background-color: initial;
+    border: none;
+}
+.adminBox{
+    position: fixed;
+    width: calc(100% - 200px);
+    height: 100%;
+    left: 200px;
+    display: none;
+    overflow: auto;
+}
+#findUserInput{
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    width: 800px;
+    font-size: 30px;
+    position: absolute;
+    left: 60px;
+    top: 50px;
+}
+#findUserInput:focus {
+    outline: none; /* 设置选中时的轮廓样式 */
+    background-color: initial; /* 设置选中时的背景色 */
+}
+#findUserChose, #announcementsChose{
+    border: #1e56a0 3px solid;
+    background-color: #d6e4f0;
+    color: #1e56a0;
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    width: 180px;
+    left: 60px;
+    top: 30px;
+    padding: 10px;
+    border-radius: 5px;
+}
+#announcementsChose{
+    width: 500px;
+}
+#user_table_box, #announcementsText{
+    background-color: #1e56a0;
+    position: absolute;
+    width: calc(100% - 120px);
+    height: calc(100% - 200px);
+    top: 100px;
+    left: 60px;
+    overflow: auto;
+    border-radius: 10px;
+}
+#user_table{
+    margin: 10px;
+    width: 1500px;
+    color: #f6f6f6;
+    font-size: 12px;
+    border-collapse: collapse;
+    border: 3px solid #f6f6f6; /* 设置表格外边框 */
+}
+
+th, td {
+    border: 3px solid #f6f6f6; /* 设置单线边框 */
+    padding: 4px 4px 4px 5px;
+    text-align: left;
+    white-space: nowrap; /* 防止文本换行 */
+}
+th {
+    background-color: #1e56a0;
+}
+.get_password{
+    background-color: initial;
+    color: #f6f6f6;
+    cursor: pointer;
+    border: none;
+    font-size: 12px;
+}
+#user_table_change_value_light{
+    position: fixed;
+    background-color: #f6f6f6;
+    width: 440px;
+    height: 412px;
+    top: calc(50% - 206px);
+    left: calc(50% - 220px);
+    z-index: 1001;
+    display: none;
+}
+#user_table_change_value_light h1,#user_table_change_value_light h6, #user_table_change_value_light input{
+    color: #1e56a0;
+    position: absolute;
+    left: 30px;
+}
+#user_table_change_value_light h6{
+    top: 80px;
+}
+#user_table_change_value_light input{
+    color: black;
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    width: 330px;
+    font-size: 25px;
+    top: 180px;
+}
+#user_table_change_value_light input:focus {
+    outline: none; /* 设置选中时的轮廓样式 */
+    background-color: initial; /* 设置选中时的背景色 */
+}
+#user_table_change_value_light button{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    bottom: 30px;
+    border: #1e56a0 2px solid;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#user_change_cancel_button{
+    background-color: #f6f6f6;
+    color: #1e56a0;
+    right: 160px;
+}
+#user_change_submit_button{
+    background-color: #1e56a0;
+    color: #f6f6f6;
+    right: 30px;
+}
+#user_change_submit_button:hover{
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+#announcementsShow{
+    margin: 0;
+    resize: none;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border-radius: 10px;
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+    font-size: 40px;
+    font-weight: bold;
+}
+.announcementsButton{
+    color: #f6f6f6;
+    border: #1e56a0 2px solid;
+    background-color: #1e56a0;
+    position: absolute;
+    top: 40px;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.announcementsButton:hover{
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+#CreateButton{
+    left: calc(100% - 280px)
+}
+#UploadButton{
+    left: calc(100% - 170px);
+}
+#DeleteButton{
+    left: calc(100% - 390px);
+}
+#CreateBox{
+    position: fixed;
+    background-color: #ffffff;
+    width: 440px;
+    height: 413px;
+    top: calc(50% - 207px);
+    left: calc(50% - 220px);
+    display: none;
+}
+#CreateBox h1{
+    color: #1e56a0;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+#CreateBox h3{
+    color: #1e56a0;
+    position: absolute;
+    left: 30px;
+    top: 110px;
+}
+#CreateInput{
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    width: 380px;
+    font-size: 30px;
+    position: absolute;
+    left: 30px;
+    top: 190px;
+    color: #1e56a0;
+}
+#CreateInput:focus {
+    outline: none; /* 设置选中时的轮廓样式 */
+    background-color: initial; /* 设置选中时的背景色 */
+}
+#CreateSubmitButton{
+    background-color: #1e56a0;
+    border: 2px #f6f6f6 solid;
+    color: #f6f6f6;
+    font-size: 20px;
+    padding: 5px 10px;
+    font-weight: bold;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#CreateSubmitButton:hover{
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+#CreateLight{
+    position: absolute;
+    top: 220px;
+    left: 30px;
+    color: #fff;
+}
+#CreateCancelButton{
+    font-weight: bold;
+    position: absolute;
+    right: 120px;
+    bottom: 40px;
+    border: none;
+    color: #1e56a0;
+    font-size: 16px;
+    background-color: initial;
+    cursor: pointer;
+}
+#flowBox h1{
+    margin: 80px 0 0 80px;
+    color: #1e56a0;
+}
+#flowBox canvas{
+    margin: 0 0 80px 80px;
+    color: #1e56a0;
+}
+#BanPE{
+    background-color: #f6f6f6;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    display: none;
+}
+#BanPE h1{
+    color: #1e56a0;
+    word-wrap: break-word;
+    padding: 30px;
+    font-size: 50px;
+}
+@media screen and (max-width: 900px) {
+    #BanPE{
+        display: block;
+    }
+}
+@media screen and (max-width: 1150px) and (min-width: 900px){
+    #ShowLogsButton{
+        transform: translateX(-40px) scale(0.7);
+    }
+    #announcementsChose{
+        font-size: 19px;
+        width: 390px;
+    }
+    #CreateButton,#UploadButton,#DeleteButton{
+        transform: scale(0.5);
+    }
+    #DeleteButton{
+        left: calc(100% - 270px);
+    }
+    #CreateButton{
+        left: calc(100% - 215px)
+    }
+    #UploadButton{
+        left: calc(100% - 160px);
+    }
+}
+.FlowButton{
+    background-color: #1e56a0;
+    color: #f6f6f6;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px #1e56a0 solid;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+    position: absolute;
+}
+.FlowButton:hover{
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+#SearchIPButton{
+    text-decoration: none;
+    top: 0;
+    left: 300px;
+}
+#BanIpButton{
+    top: 0;
+    left: 550px;
+}
+#BanIpBox{
+    padding: 30px;
+    background-color: #f6f6f6;
+    color: #1e56a0;
+    width: 660px;
+    height: 640px;
+    position: fixed;
+    top: calc(50% - 330px);
+    left: calc(50% - 320px);
+    z-index: 1001;
+    display: none;
+}
+#BanIpBox h1{
+    font-size: 50px;
+}
+#BanIpBox h3{
+    position: absolute;
+    top: 150px;
+    left: 10px;
+    font-size: 30px;
+}
+#HaveBanBox{
+    background-color: #ffffff;
+    position: absolute;
+    top: 230px;
+    left: 10px;
+    height: calc(100% - 250px);
+    width: 300px;
+    overflow: auto;
+}
+.HaveBanIp{
+    display: block;
+    margin: 10px;
+    color: #1e56a0;
+    background-color: initial;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#NewBanInput{
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    width: 280px;
+    font-size: 30px;
+    position: absolute;
+    right: 50px;
+    top: 210px;
+    color: #1e56a0;
+}
+#NewBanInput:focus {
+    outline: none; /* 设置选中时的轮廓样式 */
+    background-color: initial; /* 设置选中时的背景色 */
+}
+#NewBanH3{
+    position: absolute;
+    right: 130px;
+    width: 200px;
+}
+#BanButton{
+    border-radius: 0;
+    top: 280px;
+    right: 50px;
+}
+#BanIpCancelButton{
+    background-color: #f6f6f6;
+    color: #1e56a0;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    padding: 5px 10px;
+    position: absolute;
+    right: 150px;
+    top: 290px;
+}
+#ShowLogsButton{
+    cursor: pointer;
+    white-space: nowrap;
+    background-color: #1e56a0;
+    border: #1e56a0 2px solid;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+    color: #f6f6f6;
+    font-weight: bold;
+    padding: 5px 10px;
+    left: 680px;
+    transition: 0.3s;
+}
+#ShowLogsButton:hover{
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+#TopFrame{
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    border-bottom: #163172 2px solid;
+}
+#LeftFrame{
+    width: 50%;
+    height: calc(100% - 151px);
+    position: absolute;
+    top: 151px;
+    left: 0;
+    border-right: #163172 1px solid;
+}
+#RightFrame{
+    width: 50%;
+    height: calc(100% - 151px);
+    position: absolute;
+    top: 151px;
+    right: 0;
+    border-left: #163172 1px solid;
+}
+#LeftFrame h1,#RightFrame h1{
+    margin: 20px 0 0 5%;
+    color: #1e56a0;
+}
+.TableBox{
+    position: absolute;
+    width: 90%;
+    height: calc(90% - 80px);
+    top: 80px;
+    left: 5%;
+    background-color: #1e56a0;
+    border-radius: 5px;
+    overflow: auto;
+}
+#CreateExchangeButton{
+    background-color: #1e56a0;
+    border: #1e56a0 2px solid;
+    color: #f6f6f6;
+    cursor: pointer;
+    position: absolute;
+    top: 80px;
+    left: 2.5%;
+    transition: 0.3s;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+#CreateExchangeButton:hover{
+    color: #1e56a0;
+    background-color: #f6f6f6;
+}
+#CreateExchangeBox{
+    background-color: #f6f6f6;
+    width: 440px;
+    height: 413px;
+    position: fixed;
+    top: calc(50% - 207px);
+    left: calc(50% - 220px);
+    z-index: 10;
+    display: none;
+}
+#SubmitExchangeButton{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    bottom: 30px;
+    right: 30px;
+    border: #1e56a0 2px solid;
+    background-color: #1e56a0;
+    font-size: 20px;
+    color: #f6f6f6;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#SubmitExchangeButton:hover{
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+#CancelExchangeButton{
+    position: absolute;
+    background-color: #f6f6f6;
+    color: #1e56a0;
+    right: 160px;
+    bottom: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+#CreateExchangeInput{
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    width: 90%;
+    font-size: 18px;
+}
+#CreateExchangeInput:focus {
+    outline: none; /* 设置选中时的轮廓样式 */
+    background-color: initial; /* 设置选中时的背景色 */
+}
+.TableBox table{
+    margin: 2%;
+    color: #f6f6f6;
+    font-size: 12px;
+    border-collapse: collapse;
+    border: 3px solid #f6f6f6; /* 设置表格外边框 */
+}
+.ExchangeInput{
+    background-color: initial;
+    color: #f6f6f6;
+    font-weight: bold;
+    border: none;
+    width: 100px;
+}
+.ExchangeInput:focus {
+    outline: none; /* 设置选中时的轮廓样式 */
+    background-color: #f6f6f6; /* 设置选中时的背景色 */
+    color: #1e56a0;
+}
+.FlowBoxs{
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+#Gray{
+    position: fixed;
+    width: 100%;
+    height: 1000%;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}

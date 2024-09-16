@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% block title %}协作{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/collaboration.css') }}">
+{% endblock %}
+{% block body %}
+    <div id="ProjectRightMenu">
+        <ul>
+            <li><button>删除</button></li>
+        </ul>
+    </div>
+    <div id="Gray">
+        <div id="CreateProjectLightBox">
+            <label>
+                <h1>请输入项目名称：</h1>
+                <input type="text" id="ProjectInput">
+            </label>
+            <button id="CancelButton" onclick="hidden_create_project()">取消</button>
+            <button id="SubmitButton" onclick="submit_create_project()">提交</button>
+        </div>
+        <div id="UserJoinLightBox">
+            <label>
+                <h1>请输入用户名：</h1>
+                <input type="text" id="UserJoinInput">
+                <h3 id="UserJoinLight">提示</h3>
+            </label>
+            <button id="CancelJoinButton" onclick="hidden_join()">取消</button>
+            <button id="SubmitJoinButton" onclick="submit_join()">提交</button>
+        </div>
+        <div id="CreateDirBox" class="LightBox">
+            <h1 style="margin: 30px">创建文件夹</h1>
+            <label>
+                <h3 style="margin: 0 0 10px 30px">请输入文件夹名称</h3>
+                <input type="text" id="NewDirNameInput">
+                <h5 id="NewDirNameLight">提示</h5>
+            </label>
+            <button class="CancelButton" onclick="hidden_create_dir_box()">取消</button>
+            <button class="SubmitButton" onclick="submit_create_dir()">创 建</button>
+        </div>
+        <div id="CreateLinkBox" class="LightBox">
+            <h1 style="margin: 30px">创建网页链接</h1>
+            <label>
+                <h3 style="margin: 0 0 10px 30px">请输入描述</h3>
+                <input type="text" id="NewLinkNameInput">
+                <h5 id="NewLinkNameLight">提示</h5>
+            </label>
+            <label>
+                <h3 style="margin: 100px 0 10px 30px">请输入网址</h3>
+                <input type="url" id="NewLinkWebInput">
+            </label>
+            <button class="CancelButton" onclick="hidden_create_link_box()">取消</button>
+            <button class="SubmitButton" onclick="submit_link()">创 建</button>
+        </div>
+        <div id="MoveInBox" class="LightBox">
+            <h1 style="margin: 30px">从云盘中移入</h1>
+            <div id="MoveInFilesBox">
+                <div id="FilesPathBox"></div>
+            </div>
+            <button class="CancelButton" onclick="hidden_move_in_box()" style="right: 20px" id="MoveInCancelButton">取消</button>
+        </div>
+        <div id="RenameBox" class="LightBox">
+            <h1 style="margin: 30px">重命名</h1>
+            <label>
+                <h3 style="margin: 0 0 10px 30px">请输入新名字</h3>
+                <input type="text" id="RenameInput">
+                <h5 id="RenameLight">提示</h5>
+            </label>
+            <button class="CancelButton" onclick="hidden_rename_box()">取消</button>
+            <button class="SubmitButton" onclick="submit_rename()">提 交</button>
+        </div>
+        <div id="MoveBox" class="LightBox">
+            <h1>请选择你想要移动到的位置：</h1>
+            <div id="FilesTree"></div>
+            <button id="MoveCancelButton" onclick="hidden_move_box()">取消</button>
+        </div>
+    </div>
+    <div id="Menu">
+        <ul>
+            <li><button class="MenuButton" style="margin: 100px 0 0 0" onclick="goCollaboration()" id="ToCollaborationButton"><span class="iconfont icon-project menuBtn"></span><t class="MenuText"> 项目</t></button></li>
+            <li><button class="MenuButton" onclick="to_join_code()" id="ToJoinCodeButton"><span class="iconfont icon-join menuBtn"></span><t class="MenuText"> 加入</t></button></li>
+            <li><a href="/user_information" id="ToUserInformation"><span class="iconfont icon-user menuBtn"></span> <t class="MenuText">{{ username }}</t></a></li>
+        </ul>
+    </div>
+    <div id="ProjectFilesRightMenu">
+        <button id="ShowRenameButton" class="ProjectFilesRightMenuButtons" onclick="show_rename_box()">重命名</button>
+        <button id="ShowMoveButton" class="ProjectFilesRightMenuButtons" onclick="show_move_box()">移动</button>
+        <button id="DeleteButton" class="ProjectFilesRightMenuButtons" onclick="delete_file()">删除</button>
+        <button id="PreviewButton" class="ProjectFilesRightMenuButtons" onclick="preview_else()">预览</button>
+        <button id="DownloadButton" class="ProjectFilesRightMenuButtons" onclick="download_j()">下载</button>
+    </div>
+    <div id="RightBackground">
+        <div id="TopBox">
+            <button id="CreateProject" onclick="show_create_project()"><span class="iconfont icon-create"></span> 创建项目</button>
+        </div>
+        <div id="BottomBox">
+            {% for i in range(project_list | length) %}
+                <div class="ProjectBox" onclick="show_project_information('{{ i }}')" project_id="{{ project_list[i][5] }}">
+                    <h1 class="ProjectTitle">{{ project_list[i][0] }}</h1>
+                    <h3 class="ProjectOwner">策划：{{ project_list[i][1][1] }}</h3>
+                    <img src='{{ url_for('static', filename="levels/lv" + project_list[i][1][2] | string + ".png") }}' alt="lv{{ project_list[i][1][2] | string }}" class="ProjectOwnerImg">
+                </div>
+            {% endfor %}
+            {% if project_list | length == 0%}
+                <h1 style="color: #d6e4f0; width: 100%;text-align: center;margin: 50px 0 0 0">你没有项目</h1>
+            {% endif %}
+        </div>
+        <div id="ProjectInformationBackground">
+            <button id="Back" onclick="hidden_project_information()"><</button>
+            <h1 id="ProjectTitle"></h1>
+            <h2 id="ProjectOwner"></h2>
+            <h3 id="ProjectAdmins"></h3>
+            <h3 id="ProjectMembers"></h3>
+            <button id="GoMessageBoard" onclick="show_message_board()">留言板</button>
+            <button id="GoControlProject" onclick="show_admin()">成员管理</button>
+            <button id="GoProjectCloud" onclick="show_project_cloud()">进入项目云盘</button>
+        </div>
+        <div id="MessageBoardBox">
+            <label for="MessageBoard">
+                <textarea id="MessageBoard" cols="30" rows="10"></textarea>
+            </label>
+            <button id="CancelMessageBoard" onclick="hidden_message_board()">取消</button>
+            <button id="SubmitMessageBoard" onclick="submit_message()">提 交</button>
+        </div>
+        <div id="AdminBox">
+            <div id="AdminLeftBox">
+                <button id="Back_Admin" onclick="hidden_admin()"><</button>
+                <h1 id="AdminProjectTitle" style="height: calc(100vh - 400px)"></h1>
+                <div id="AdminLeftInformationBox">
+                    <h1 id="AdminProjectOwner" class="AdminInformation"></h1>
+                    <button id="GetJoinCode" onclick="get_code()" style="margin: 10px 0 0 0">加入码 : ****************</button>
+                </div>
+            </div>
+            <div id="AdminRightBox">
+                <button id="AdminSetJoinButton" onclick="show_join()">加入</button>
+                <div id="ManageBox">
+                    <div id="AdminsBox"></div>
+                    <div id="MembersBox"></div>
+                </div>
+            </div>
+        </div>
+        <div id="ProjectCloudBox">
+            <div id="TopFunctionBox">
+                <div id="FunctionButtonsBox">
+                    <button id="CreateDirButton" class="Button iconfont icon-new_floder ProjectFunctionButton" onclick="show_create_dir_box()"></button>
+                    <button id="CreateLinkButton" class="Button iconfont icon-link ProjectFunctionButton" onclick="show_create_link_box()"></button>
+                    <button id="MoveInButton" class="Button iconfont icon-movein ProjectFunctionButton" onclick="show_move_in_box()"></button>
+                    <form action="/upload_project" method="post" enctype="multipart/form-data" id="UploadForm">
+                        <button class="iconfont icon-upload ProjectFunctionButton" id="UploadButton"></button>
+                        <input type="file" id="fileInput" name="files" multiple style="display: none">
+                        <input type="submit" value="Upload" style="display: none">
+                    </form>
+                </div>
+                <div id="PathLightBox">
+                    <h3 style="color: #1e56a0" id="PathH3Light">当前：<button class="PathButton" onclick="dir_to(0)" id="project_name"></button></h3><h3 style="color: #1e56a0" id="PathH3"></h3>
+                </div>
+            </div>
+            <div style="position: absolute;top: 99px;width: 100%;display: flex;justify-content: center">
+                <div id="progressBar" style="height: 3px;background-image: linear-gradient(to right, #1e56a0, #d6e4f0, #1e56a0);width: 0"></div>
+            </div>
+            <div id="UploadLightBox">
+                <span class="iconfont icon-upload" id="UploadLightBoxSpan"></span>
+            </div>
+            <div id="BottomFilesBox"></div>
+        </div>
+    </div>
+    <script>
+        const user_id = {{ user_id | safe }}
+        const username = "{{ username | safe }}"
+        let JoinCode;
+        let user_files
+        let project_list = {{ project_list | safe }}
+        let path = []
+        let datas = {}
+        const numDots = 0;
+    </script>
+    <script src="{{ url_for('static',filename='JS/collaboration.js') }}"></script>
+{% endblock %}

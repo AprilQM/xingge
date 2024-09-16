@@ -1,0 +1,134 @@
+/*全局样式*/
+ul {
+    list-style-type: none; /* 去除列表项前的点 */
+    padding: 0; /* 移除默认的内边距 */
+    margin: 0; /* 移除默认的外边距 */
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #163172;
+    position: relative;
+    display: flex;
+    justify-content: center; /* 新增这行 */
+}
+
+/* 隐藏垂直滚动条 */
+body::-webkit-scrollbar {
+    width: 0; /* 彻底隐藏滚动条 */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+/*top栏样式*/
+.top{
+    background-color: #163172;
+    border: none;
+    padding: 0;
+    top: 0;
+    height: 60px;
+    overflow: hidden;
+    z-index: 20;
+    position: fixed;
+    width: 100%;
+}
+.top ul li{
+    float: left;
+}
+#topLogo{
+    width: 57px;
+    margin: 3px 50px 0 10px;
+}
+.topButton{
+    border: none;
+    background-color: #163172;
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+    padding: 5px 30px 0 30px;
+    height: 60px;
+    transition: 0.5s;
+    margin: 0 5px 0 5px;
+}
+.topButton:hover{
+    background-color: #d6e4f0;
+    color: #1e56a0;
+}
+.topSpan{
+    font-size: 30px !important;
+}
+#loginButton{
+    position: absolute;
+    right: 20px;
+    top: 2px;
+    background-color: #1e56a0;
+    border-radius: 5px;
+    border: none;
+    padding: 0 20px 0 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+    height: 46px;
+    transition: 0.5s;
+}
+#loginButton:hover{
+    background-color: #d6e4f0;
+    color: #1e56a0;
+}
+
+/*背景小白点*/
+.dot {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  animation: animateDot 5s infinite ease-in-out;
+}
+@keyframes animateDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.5;
+  }
+}
+.Button{
+    border: #1e56a0 2px solid;
+    background-color: #1e56a0;
+    color: #f6f6f6;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.Button:hover{
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+
+/*非电脑*/
+@media screen and (max-width: 1145px) {
+    #TopUserName{
+        right: 10px;
+    }
+    .topButton{
+        padding: 0 5px 0 5px;
+        margin: 0;
+    }
+    #topLogo{
+        width: 57px;
+        margin: 3px 10px 0 10px;
+    }
+    .PhoneHidden{
+        display: none;
+    }
+}
+
+
+

@@ -1,0 +1,1220 @@
+body {
+    background-color: #f6f6f6;
+}
+
+#Menu {
+    background-color: #163172;
+    width: 200px;
+    position: fixed;
+    left: 0;
+    height: calc(100% - 60px);
+    top: 60px;
+    border-top: #f6f6f6 1px solid;
+    z-index: 20;
+}
+
+.MenuButton {
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#ToCollaborationButton {
+    background-color: #f6f6f6;
+    color: #163172;
+    font-size: 40px;
+}
+
+#ToJoinCodeButton {
+    background-color: #163172;
+    color: #f6f6f6;
+}
+
+#ToJoinCodeButton:hover {
+    background-color: #f6f6f6;
+    color: #163172;
+    font-size: 40px;
+}
+
+.menuBtn {
+    font-size: 50px;
+}
+
+#ToUserInformation {
+    position: fixed;
+    text-decoration: none;
+    width: 200px;
+    color: #f6f6f6;
+    font-size: 27px;
+    font-weight: bold;
+    bottom: 30px;
+    text-align: center;
+}
+
+#RightBackground {
+    background-color: #f6f6f6;
+    width: calc(100% - 200px);
+    left: 200px;
+    height: calc(100% - 60px);
+    position: fixed;
+    top: 60px;
+}
+
+#TopBox {
+    height: 100px;
+    width: 100%;
+    border-bottom: #163172 1px solid;
+    position: relative;
+}
+
+#BottomBox {
+    height: calc(100% - 100px);
+    width: 100%;
+    border-bottom: #163172 1px solid;
+    margin: 0;
+    position: relative;
+    overflow: auto;
+}
+
+#CreateProject {
+    border: #1e56a0 2px solid;
+    padding: 8px 15px;
+    color: #f6f6f6;
+    background-color: #1e56a0;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+#CreateProject span {
+    font-size: 25px;
+}
+
+#CreateProject:hover {
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+
+.ProjectBox {
+    min-height: 200px;
+    border-bottom: #1e56a0 1px solid;
+    position: relative;
+    cursor: pointer;
+}
+
+.ProjectTitle {
+    font-size: 40px;
+    font-weight: bold;
+    color: #163172;
+    cursor: pointer;
+    margin: 0;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.ProjectOwner {
+    position: absolute;
+    bottom: 20px;
+    margin: 30px;
+    font-size: 20px;
+    display: inline;
+    color: #1e56a0;
+    cursor: pointer;
+}
+
+.ProjectOwnerImg {
+    width: 60px;
+    position: absolute;
+    bottom: 50px;
+    left: 180px;
+    cursor: pointer;
+}
+
+#Gray {
+    position: fixed;
+    width: 100%;
+    height: 1000%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+#CreateProjectLightBox,
+#UserJoinLightBox {
+    display: none;
+    background-color: #f6f6f6;
+    position: fixed;
+    z-index: 1001;
+    width: 340px;
+    height: 320px;
+    top: calc(50% - 170px);
+    left: calc(50% - 160px);
+    padding: 30px;
+}
+
+#CreateProjectLightBox h1,
+#UserJoinLightBox h1 {
+    color: #1e56a0;
+}
+
+#ProjectInput,
+#UserJoinInput {
+    width: 300px;
+    position: absolute;
+    top: 160px;
+    left: 30px;
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    font-size: 30px;
+    color: #1e56a0;
+}
+
+#ProjectInput:focus,
+#UserJoinInput:focus {
+    outline: none;
+    /* 设置选中时的轮廓样式 */
+    background-color: initial;
+    /* 设置选中时的背景色 */
+}
+
+#CancelButton,
+#CancelJoinButton {
+    border: none;
+    color: #1e56a0;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 150px;
+    bottom: 50px;
+    cursor: pointer;
+}
+
+#SubmitButton,
+#SubmitJoinButton {
+    border: #1e56a0 2px solid;
+    color: #f6f6f6;
+    background-color: #1e56a0;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 60px;
+    padding: 6px 10px;
+    bottom: 45px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#SubmitButton:hover {
+    color: #1e56a0;
+    background-color: #f6f6f6;
+}
+
+#ProjectInformationBackground {
+    background-color: #f6f6f6;
+    height: calc(100% - 60px);
+    width: calc(100% - 200px);
+    left: 200px;
+    position: fixed;
+    top: 60px;
+    display: none;
+}
+
+#Back,
+#Back_Admin {
+    color: #1e56a0;
+    font-size: 60px;
+    font-weight: bold;
+    position: absolute;
+    margin: 50px 0 0 50px;
+    border: none;
+    background-color: initial;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#Back:hover,
+#Back_Admin:hover {
+    color: #163172;
+    transform: scale(1.3);
+}
+
+#ProjectTitle {
+    font-size: 80px;
+    position: absolute;
+    top: 60px;
+    left: 100px;
+    color: #163172;
+    white-space: nowrap;
+}
+
+#ProjectOwner {
+    font-size: 30px;
+    position: relative;
+    margin: 260px 0 0 100px;
+    color: #163172;
+}
+
+#ProjectAdmins {
+    font-size: 30px;
+    position: relative;
+    margin: 10px 0 0 100px;
+    color: #163172;
+}
+
+#ProjectMembers {
+    font-size: 30px;
+    position: relative;
+    margin: 10px 0 0 100px;
+    color: #163172;
+}
+
+#GoProjectCloud,
+#GoControlProject,
+#GoMessageBoard {
+    background-color: #1e56a0;
+    border: #1e56a0 2px solid;
+    color: #f6f6f6;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 15px 30px;
+    position: absolute;
+    bottom: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#GoProjectCloud:hover,
+#GoControlProject:hover,
+#GoMessageBoard:hover {
+    color: #1e56a0;
+    background-color: #f6f6f6;
+}
+
+#GoProjectCloud {
+    right: 100px;
+}
+
+#GoMessageBoard {
+    right: 320px;
+}
+
+#GoControlProject {
+    right: 480px;
+}
+
+#MessageBoardBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    background-color: #f6f6f6;
+    display: none;
+}
+
+#MessageBoard {
+    resize: none;
+    width: 94%;
+    height: 80%;
+    position: absolute;
+    left: 3%;
+    top: 5%;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#SubmitMessageBoard {
+    background-color: #1e56a0;
+    border: #1e56a0 2px solid;
+    color: #f6f6f6;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: calc(1% + 5px);
+    font-size: 20px;
+    font-weight: bold;
+    right: 100px;
+}
+
+#SubmitMessageBoard:hover {
+    color: #1e56a0;
+    background-color: #f6f6f6;
+}
+
+#CancelMessageBoard {
+    font-size: 20px;
+    border: none;
+    background-color: initial;
+    font-weight: bold;
+    color: #1e56a0;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    bottom: calc(1% + 15px);
+    right: 220px;
+}
+
+#CancelMessageBoard:hover {
+    color: #163172;
+}
+
+#AdminBox,
+#ProjectCloudBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    background-color: #f6f6f6;
+    display: none;
+}
+
+#AdminProjectTitle {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    color: #163172;
+    font-weight: bold;
+    font-size: 40px;
+    position: relative;
+    width: calc((100vw - 220px) / 2);
+    text-align: center;
+    margin: 100px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.AdminInformation {
+    color: #1e56a0;
+    margin: 0 10px 0 100px;
+    font-size: 25px;
+}
+
+#GetJoinCode {
+    border: none;
+    background-color: initial;
+    color: #1e56a0;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#ManageBox {
+    border: #f6f6f6 2px solid;
+    width: calc((100vw - 200px) / 2 - 50px);
+    height: calc(100vh - 60px - 180px);
+    position: fixed;
+    top: 200px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e56a0;
+}
+
+.ManageAdminButton,
+.ManageMemberButton {
+    border: none;
+    color: #f6f6f6;
+    font-weight: bold;
+    background-color: initial;
+    cursor: pointer;
+    font-size: 30px;
+    display: block;
+    transition: 0.3s;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.ManageAdminButton:hover,
+.ManageMemberButton:hover {
+    color: #ffffff;
+    text-shadow: #ffffff 0 0 3px;
+}
+
+#AdminSetJoinButton {
+    border: none;
+    background-color: #1e56a0;
+    color: #f6f6f6;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    margin: 60px 0 0 0;
+    right: 60px;
+}
+
+#AdminSetJoinButton:hover {
+    text-shadow: #ffffff 0 0 5px;
+}
+
+#ProjectRightMenu button {
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    color: #163172;
+    background-color: initial;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#ProjectRightMenu {
+    box-shadow: #222222 0 0 5px;
+    z-index: 30;
+    background-color: #fff;
+    width: 0;
+    height: auto;
+    overflow: hidden;
+    position: fixed;
+    transition: width 0.3s;
+}
+
+#UnderLight {
+    width: 100%;
+    margin: 30px 0 30px 0;
+    color: #d6e4f0;
+    font-size: 30px;
+    text-align: center;
+}
+
+#TopFunctionBox {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    top: 0;
+    border-bottom: #1e56a0 1px solid;
+}
+
+#BottomFilesBox {
+    position: absolute;
+    top: 100px;
+    height: calc(100% - 100px);
+    width: 100%;
+    border-bottom: #163172 2px solid;
+    overflow: auto;
+}
+
+.FilesButtonBox {
+    padding: 20px;
+    font-size: 30px;
+    color: #1e56a0;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.FilesButtonBox span {
+    font-weight: normal;
+    font-size: 80px;
+}
+
+.FilesButtonBox t {
+    margin: 0 0 0 50px;
+}
+
+.FilesButtonBox:hover {
+    color: #163172;
+}
+
+/* 隐藏垂直滚动条 */
+#BottomFilesBox::-webkit-scrollbar {
+    width: 0;
+    /* 彻底隐藏滚动条 */
+}
+
+#BottomFilesBox::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#BottomFilesBox::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+#FunctionButtonsBox {
+    width: 240px;
+    margin: 50px 0 0 10px;
+}
+
+.ProjectFunctionButton {
+    padding: 8px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 3px;
+    margin: 0 5px;
+}
+
+.PathButton {
+    background-color: initial;
+    border: none;
+    color: #1e56a0;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.PathButton:hover {
+    color: #163172;
+    transform: scale(1.1);
+}
+
+#PathH3 {
+    margin: 0;
+    display: inline;
+}
+
+#PathH3 button {
+    padding: 2px;
+}
+
+#PathH3Light {
+    margin: 0;
+    display: inline;
+}
+
+#PathH3Light button {
+    padding: 2px;
+}
+
+#PathLightBox {
+    position: absolute;
+    width: calc(100% - 250px);
+    left: 250px;
+    bottom: 0;
+    overflow-y: scroll;
+    max-height: 100px;
+}
+
+/* 隐藏垂直滚动条 */
+#PathLightBox::-webkit-scrollbar {
+    width: 0;
+    /* 彻底隐藏滚动条 */
+}
+
+#PathLightBox::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#PathLightBox::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.LightBox {
+    width: 370px;
+    position: fixed;
+    background-color: #f6f6f6;
+    z-index: 20;
+    top: calc(50% - 250px);
+    left: calc(50% - 185px);
+    color: #1e56a0;
+    display: none;
+}
+
+#CreateDirBox {
+    height: 413px;
+}
+
+#NewDirNameInput {
+    width: 300px;
+    position: absolute;
+    top: 160px;
+    left: 30px;
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    font-size: 18px;
+    color: #1e56a0;
+}
+
+#NewDirNameInput:focus {
+    outline: none;
+    /* 设置选中时的轮廓样式 */
+    background-color: initial;
+    /* 设置选中时的背景色 */
+}
+
+#NewDirNameLight {
+    position: absolute;
+    top: 180px;
+    left: 30px;
+    color: #f6f6f6;
+}
+
+.CancelButton {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    bottom: 30px;
+    right: 130px;
+    border: none;
+    background-color: #f6f6f6;
+    font-size: 20px;
+    color: #1e56a0;
+    cursor: pointer;
+}
+
+.SubmitButton {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    bottom: 30px;
+    right: 30px;
+    border: #1e56a0 2px solid;
+    background-color: #1e56a0;
+    font-size: 20px;
+    color: #f6f6f6;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.SubmitButton:hover {
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+
+#CreateLinkBox {
+    height: 500px;
+}
+
+#CreateLinkBox input {
+    width: 300px;
+    position: absolute;
+    left: 30px;
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    font-size: 18px;
+    color: #1e56a0;
+}
+
+#CreateLinkBox input:focus {
+    outline: none;
+    /* 设置选中时的轮廓样式 */
+    background-color: initial;
+    /* 设置选中时的背景色 */
+}
+
+#MoveInBox {
+    height: 600px;
+}
+
+#FilesPathBox {
+    overflow: auto;
+    line-height: 1.5;
+    white-space: pre;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    z-index: 10;
+    border: #f6f6f6 4px solid;
+    background-color: #fff;
+}
+
+/* 隐藏垂直滚动条 */
+#FilesPathBox::-webkit-scrollbar {
+    width: 0;
+    /* 彻底隐藏滚动条 */
+}
+
+#FilesPathBox::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#FilesPathBox::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+#MoveInFilesBox {
+    position: fixed;
+    top: calc(50vh - 150px);
+    left: calc(50vw - 175px);
+    width: 350px;
+    height: 400px;
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#MoveInFilesBox::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 300%;
+    background-image: linear-gradient(#1e56a0, #f6f6f6, #1e56a0);
+    animation: MoveInProgressBarRun 3s ease-out infinite;
+}
+
+#MoveInFilesBox::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background-color: #f6f6f6;
+}
+
+@keyframes MoveInProgressBarRun {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.node {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.node:hover {
+    color: #163172;
+}
+
+#UploadButton {
+    position: absolute;
+    top: 50px;
+    left: 190px;
+    cursor: pointer;
+    color: #f6f6f6;
+    background-color: #1e56a0;
+    transition: 0.3s;
+    border: #1e56a0 2px solid;
+}
+
+#UploadButton:hover {
+    color: #1e56a0;
+    background-color: #f6f6f6;
+}
+
+#ProjectFilesRightMenu {
+    box-shadow: #222222 0 0 5px;
+    width: 0;
+    transition: 0.3s;
+    z-index: 900;
+    position: absolute;
+    background-color: #fff;
+    height: auto;
+    overflow: hidden;
+}
+
+.ProjectFilesRightMenuButtons {
+    white-space: nowrap;
+    width: 100%;
+    border: none;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #1e56a0;
+    cursor: pointer;
+    margin: 2px 0 0 0;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.ProjectFilesRightMenuButtons:hover {
+    color: #163172;
+    font-size: 25px;
+}
+
+#RenameBox {
+    height: 413px;
+}
+
+#RenameInput {
+    width: 300px;
+    position: absolute;
+    top: 160px;
+    left: 30px;
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    font-size: 18px;
+    color: #1e56a0;
+}
+
+#RenameInput:focus {
+    outline: none;
+    /* 设置选中时的轮廓样式 */
+    background-color: initial;
+    /* 设置选中时的背景色 */
+}
+
+#MoveBox {
+    font-size: 15px;
+    padding: 20px;
+    height: 413px;
+    width: 400px;
+}
+
+#MoveCancelButton {
+    border: none;
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+    background-color: initial;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e56a0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#MoveCancelButton:hover {
+    color: #163172;
+}
+
+#FilesTree {
+    border: #222222 2px solid;
+    background-color: #fff;
+    height: 300px;
+    width: 400px;
+    position: absolute;
+    left: 20px;
+    overflow: auto;
+    line-height: 1.5;
+    white-space: pre;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#AdminLeftBox,
+#AdminRightBox {
+    width: calc((100vw - 200px) / 2);
+    height: 100%;
+    position: fixed;
+    top: 60px;
+}
+
+#AdminLeftBox {
+    left: 200px;
+}
+
+#AdminRightBox {
+    background-color: #1e56a0;
+    right: 0;
+}
+
+#AdminProjectOwner {
+    font-size: 30px;
+    margin: 40px 0 0 0;
+    color: #1e56a0;
+    overflow: auto;
+    text-align: center;
+}
+
+#AdminLeftInformationBox {
+    position: absolute;
+    top: calc(100vh - 300px);
+    width: calc((100vw - 220px) / 2);
+    font-size: 20px;
+    text-align: center;
+}
+
+#AdminsBox,
+#MembersBox {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    overflow: auto;
+}
+
+#AdminsBox {
+    border-right: #f6f6f6 1px solid;
+}
+
+#MembersBox {
+    right: 0;
+    border-left: #f6f6f6 1px solid;
+}
+
+#admin_light,
+#member_light {
+    display: block;
+    color: #f6f6f6;
+    width: 100%;
+    border-bottom: #f6f6f6 2px solid;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#MoveInCancelButton {
+    position: absolute;
+    bottom: 10px;
+    width: 130px;
+}
+
+#UserJoinLight {
+    color: #f6f6f6;
+    position: absolute;
+    top: 200px;
+}
+
+#UploadLightBox {
+    background-color: rgba(30, 86, 160, 0.7);
+    position: fixed;
+    width: calc(100% - 200px);
+    height: calc(100% - 60px);
+    bottom: 0;
+    right: 0;
+    z-index: 30;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+#UploadLightBoxSpan {
+    color: white;
+    font-size: 200px;
+    display: block;
+}
+
+@media screen and (max-width: 1145px) {
+    #UploadLightBox {
+            width: calc(100% - 30px);
+        }
+
+    #MoveInFilesBox {
+        top: calc(50vh - 300px);
+        width: calc(100% - 20px);
+        left: 10px;
+        height: 630px;
+    }
+
+    #CreateDirBox,
+    #CreateLinkBox,
+    #MoveInBox,
+    #RenameBox,
+    #MoveBox {
+        margin: 0;
+        width: calc(100vw - 20px);
+        left: 10px;
+        height: calc(100vh - 30px);
+        top: 15px;
+    }
+
+    #UserJoinLightBox,
+    #CreateProjectLightBox {
+        margin: 0;
+        width: calc(100vw - 80px);
+        left: 10px;
+        height: calc(100vh - 80px);
+        top: 15px;
+    }
+
+    .ManageAdminButton,
+    .ManageMemberButton {
+        font-size: 12px;
+    }
+
+    #admin_light,
+    #member_light {
+        font-size: 15px;
+    }
+
+    #ManageBox {
+        width: calc((100vw - 40px) / 2 - 50px);
+    }
+
+    #AdminLeftInformationBox {
+        width: calc((100vw - 30px) / 2);
+    }
+
+    #AdminLeftInformationBox h1 {
+        font-size: 10px;
+    }
+
+    #AdminLeftInformationBox button {
+        font-size: 10px;
+    }
+
+    #AdminProjectOwner {
+        font-size: 10px;
+    }
+
+    #AdminLeftBox,
+    #AdminRightBox {
+        width: calc((100vw - 30px) / 2);
+    }
+
+    #AdminLeftBox {
+        left: 30px;
+    }
+
+    #PathH3Light {
+        font-size: 10px;
+    }
+
+    .PathButton {
+        font-size: 10px;
+    }
+
+    #UnderLight {
+        font-size: 20px;
+    }
+
+    .FilesButtonBox {
+        padding: 10px;
+    }
+
+    .FilesButtonBox span {
+        font-size: 30px;
+    }
+
+    .FilesButtonBox t {
+        font-size: 15px;
+    }
+
+    #BottomFilesBox {
+        top: 100px;
+        height: calc(100% - 100px);
+    }
+
+    #AdminSetJoinButton {
+        font-size: 18px;
+        margin: 60px 0 0 0;
+        right: 30px;
+    }
+
+    .AdminInformation {
+        margin: 0 10px 0 20px;
+        font-size: 15px;
+    }
+
+    #AdminProjectTitle {
+        font-size: 20px;
+        width: calc((100vw - 40px) / 2);
+    }
+
+    #CancelMessageBoard {
+        font-size: 15px;
+        right: 120px;
+    }
+
+    #SubmitMessageBoard {
+        font-size: 15px;
+        right: 20px;
+    }
+
+    #SubmitMessageBoard:hover {
+        color: #1e56a0;
+        background-color: #f6f6f6;
+    }
+
+    #GoProjectCloud {
+        right: 30px;
+    }
+
+    #GoMessageBoard {
+        right: 130px;
+    }
+
+    #GoControlProject {
+        right: 205px;
+    }
+
+    #GoProjectCloud,
+    #GoControlProject,
+    #GoMessageBoard {
+        padding: 5px 10px;
+        bottom: 20px;
+        font-size: 10px;
+    }
+
+    #Back,
+    #Back_Admin {
+        font-size: 40px;
+        margin: 20px 0 0 20px;
+    }
+
+    #ProjectTitle {
+        font-size: 60px;
+        left: 40px;
+    }
+
+    #ProjectOwner {
+        font-size: 20px;
+        margin: 210px 0 0 40px;
+    }
+
+    #ProjectAdmins {
+        font-size: 20px;
+        margin: 10px 0 0 40px;
+    }
+
+    #ProjectMembers {
+        font-size: 20px;
+        margin: 10px 0 0 40px;
+    }
+
+    #ProjectInformationBackground {
+        width: calc(100% - 30px);
+        left: 30px;
+    }
+
+    #BottomBox {
+        height: calc(100% - 80px);
+    }
+
+    #TopBox {
+        height: 100px;
+    }
+
+    #RightBackground {
+        width: calc(100% - 30px);
+        left: 30px;
+    }
+
+    #Menu {
+        width: 30px;
+    }
+
+    .menuBtn {
+        font-size: 20px;
+    }
+
+    #ToUserInformation {
+        width: 30px;
+        word-wrap: anywhere;
+        font-size: 15px;
+    }
+
+    #CreateProject {
+        font-size: 10px;
+        bottom: 5px;
+        left: 5px;
+    }
+
+    #CreateProject span {
+        font-size: 13px;
+    }
+
+    .MenuText {
+        display: none;
+    }
+}

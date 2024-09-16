@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}修改用户名{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/information_ui.css') }}">
+{% endblock %}
+{% block body %}
+    <script src="{{ url_for('static',filename='JS/user_information.js') }}"></script>
+    <script>
+           document.addEventListener("DOMContentLoaded", function() {
+               document.getElementById("change_name_form").addEventListener("submit", function (event) {
+                      event.preventDefault(); // 阻止默认的表单提交行为
+
+                     // 在这里执行你想要的操作，比如调用函数等
+                     const username = '{{ username }}';
+                     change_name(username);
+
+               });
+               document.getElementById("change_password_form").addEventListener("submit", function (event) {
+                     event.preventDefault(); // 阻止默认的表单提交行为
+                     change_password();
+
+               });
+               document.getElementById("change_email_form").addEventListener("submit", function (event) {
+                    event.preventDefault(); // 阻止默认的表单提交行为
+                    change_mail()
+
+
+               });
+           });
+    </script>
+	<div class="mainBox">
+        <img src='{{ url_for('static',filename='Logo1.png') }}' alt="Logo" id="Logo">
+        <form id="change_email_form">
+            <label>
+                <h1 style="margin: 0;font-size: 18px">输入邮箱：</h1>
+                <input type="email" style="width: 300px" id="email_input">
+                <h3 id="EmailLight"></h3>
+                <h1 style="margin: 0;font-size: 18px">输入验证码：</h1>
+                <input type="text" style="width: 100px" id="code_input">
+                <h3 id="CodeLight" style="margin: 0;font-size: 18px"></h3>
+                <button type="button" id="send_code_button" onclick="send_code()" style="">获取验证码</button>
+                <h3 style="position: absolute;right: -20px;bottom: -20px;color: #f6f6f6" id="SendCodeLight">验证码已发<br>送至邮箱</h3>
+            </label>
+        </form>
+        <button id="Button" onclick="change_mail()">提 交</button>
+    </div>
+    <div style="display: none">
+        <form id="change_name_form"></form>
+        <form id="change_password_form"></form>
+        <input type="text" id="new_username">
+        <input type="text" id="old_password">
+        <input type="text" id="new_password">
+        <input type="text" id="confirm_password">
+    </div>
+    <div style="position: absolute;top: 10000px;color: #f6f6f6;font-size: 30px"> 4</div>
+    <script>
+        const numDots = 300;
+    </script>
+{% endblock %}

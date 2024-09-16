@@ -1,0 +1,57 @@
+body{
+    background-color: #f6f6f6;
+    display: block;
+}
+#Title{
+    width: 100vw;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 100px 0 0 0;
+    padding: 0;
+}
+#DocumentAuthor{
+    font-weight: normal;
+    font-size: 20px;
+    width: 100vw;
+    text-align: center;
+    margin: 10px;
+}
+#TextBox{
+    width: calc(100vw - 10px);
+    position: relative;
+    margin: 70px 5px 100px 5px;
+    height: auto;
+}
+.subhead{
+    font-weight: bold;
+    font-size: 30px;
+    margin: 20px 50px 20px 20px;
+}
+.subsubhead{
+    color: #1e56a0;
+    font-weight: bold;
+}
+.content{
+    margin: 0 50px 0 50px;
+    line-height: 30px;
+}
+.stressed_1{
+    display: inline;
+    color: #1e56a0;
+    background-color: #d6e4f0;
+    border-radius: 3px;
+    font-weight: bold;
+    margin: 0 3px;
+    padding: 1px 3px;
+}
+.stressed_2{
+    display: inline;
+    color: #163172;
+    background-color: #d6e4f0;
+    border-radius: 3px;
+    font-weight: bold;
+    margin: 0 3px;
+    padding: 1px 3px;
+}

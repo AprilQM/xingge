@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}{{ sender }}的分享{% endblock %}
+{% block head %}
+	<link rel="stylesheet" href="{{ url_for('static',filename='CSS/browse.css') }}">
+{% endblock %}
+{% block body %}
+    <h1 style="color: #163172;position: absolute;top: 60px;left: 50%;transform: translateX(-50%);font-size: 20px;white-space:nowrap;">来自 {{ sender }} 的分享</h1>
+    <button id="backButton" onclick="Back()"><</button>
+    <div id="FilesBox"></div>
+    <script>
+        code = "{{ code }}"
+        path = []
+        numDots = 0;
+        datas = {{ files | safe}}
+    </script>
+	<script src="{{ url_for('static',filename='JS/browse.js') }}"></script>
+    <script>
+        create_ui()
+    </script>
+{% endblock %}

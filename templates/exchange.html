@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}兑换{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/exchange.css') }}">
+{% endblock %}
+{% block body %}
+    <div id="Box">
+        <img src='{{ url_for('static',filename='Logo1.png') }}' alt="Logo" id="Logo">
+        <form>
+            <label>
+                <h3>请输入兑换码：</h3>
+                <input type="text" id="CodeInput">
+                <h4 id="CodeLight" style="color: #f6f6f6">提示</h4>
+            </label>
+        </form>
+        <button id="SubmitButton" onclick="submit()">提 交</button>
+    </div>
+    <div style="position: absolute;top: 10000px;color: #f6f6f6;font-size: 30px">你发现了兑换码的线索：授权>注册>忘记密码>修改用户名>修改邮箱>等级细则>修改密码>兑换码 2</div>
+    <script src="{{ url_for('static',filename='JS/exchange.js') }}"></script>
+    <script>
+        const numDots = 300;
+    </script>
+{% endblock %}

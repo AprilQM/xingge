@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1720703569708') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-share:before {
+  content: "\e68b";
+}
+
+.icon-create:before {
+  content: "\e63f";
+}
+
+.icon-download:before {
+  content: "\e8c3";
+}
+
+.icon-upload:before {
+  content: "\e96a";
+}
+
+.icon-home:before {
+  content: "\e64a";
+}
+
+.icon-project:before {
+  content: "\e609";
+}
+
+.icon-MP:before {
+  content: "\e61b";
+}
+
+.icon-MP1:before {
+  content: "\e61c";
+}
+
+.icon-PDF:before {
+  content: "\e61d";
+}
+
+.icon-rarzip:before {
+  content: "\e639";
+}
+
+.icon-new_floder:before {
+  content: "\e608";
+}
+
+.icon-movein:before {
+  content: "\e624";
+}
+
+.icon-file:before {
+  content: "\e620";
+}
+
+.icon-user:before {
+  content: "\e682";
+}
+
+.icon-link:before {
+  content: "\e6c3";
+}
+
+.icon-Browser:before {
+  content: "\e866";
+}
+
+.icon-cloud:before {
+  content: "\e518";
+}
+
+.icon-Collaboration:before {
+  content: "\e6b6";
+}
+
+.icon-pictureFile-1:before {
+  content: "\e63b";
+}
+
+.icon-dir-floder:before {
+  content: "\e601";
+}
+
+.icon-join:before {
+  content: "\e867";
+}
+
+.icon-left-arrow:before {
+  content: "\e83d";
+}
+
+.icon-magnifying-glass:before {
+  content: "\e534";
+}
+

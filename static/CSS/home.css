@@ -1,0 +1,204 @@
+h1{
+    white-space: nowrap;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: #f6f6f6;
+}
+
+.container {
+    width: 100%;
+    height: calc(100vh - 60px);
+    position: fixed;
+    top: 60px;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+/* 隐藏垂直滚动条 */
+.container {
+    overflow-y: scroll; /* 保持滚动功能 */
+    scrollbar-width: none; /* Firefox 特有属性 */
+    -ms-overflow-style: none; /* IE 和 Edge 特有属性 */
+}
+
+.container::-webkit-scrollbar {
+    display: none; /* 隐藏滚动条 */
+}
+.box {
+    border: 1px solid #ccc;
+    display: block;
+    width: 100%;
+    background-color: #f6f6f6;
+    overflow: auto;
+    position: relative;
+}
+#Title_First {
+    width: 300px;
+    margin: calc(50vh - 50px - 200px) 0 0 100px;
+    font-size: 60px;
+}
+#P_First{
+    font-weight: bold;
+    margin: 10px 0 0 100px;
+    font-size: 30px;
+}
+.Title{
+    font-size: 60px;
+    margin: calc(50vh - 50px - 200px) 0 0 100px;
+    width: 300px;
+}
+.Text{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0 0 100px;
+}
+.ShowImg{
+    position: absolute;
+    right: 100px;
+    top: calc(50% - 250px);
+    display: block;
+}
+#AboutTitle{
+    color: #f6f6f6;
+    font-weight: bold;
+    font-size: 60px;
+    margin: 100px 0 40px 100px;
+}
+#AboutText{
+    color: #f6f6f6;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0 0 0 100px;
+}
+#Gray{
+    position: fixed;
+    width: 100%;
+    height: 1000%;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.5);
+}
+#announcementsLight{
+    position: fixed;
+    height: 240px;
+    width: 340px;
+    background-color: #f6f6f6;
+    color: #1e56a0;
+    top: calc(50% - 135px);
+    left: calc(50% - 185px);
+    z-index: 1001;
+    padding: 30px;
+}
+#CloseAnnouncementLight{
+    cursor: pointer;
+    background-color: initial;
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: none;
+    color: #1e56a0;
+    transition: 0.3s;
+}
+#announcementsBoxTitle{
+    color: #f6f6f6;
+    font-size: 60px;
+    margin: 50px 0 0 100px;
+}
+#announcementsTextBox{
+    margin: 50px 0 0 0;
+    background-color: initial;
+    width: 90vw;
+    height: 70vh;
+    position: absolute;
+    left: 5vw;
+    overflow: auto;
+    border: #f6f6f6 2px solid;
+}
+.announcements{
+    min-height: 100px;
+    width: 100%;
+    border-bottom: #f6f6f6 1px solid;
+}
+.announcements h1{
+    margin: 25px;
+    font-size: 50px;
+    color: #f6f6f6;
+}
+.announcements p{
+    margin: 30px 0 30px 30px;
+    font-size: 20px;
+    color: #f6f6f6;
+}
+@media screen and (max-width: 768px) {
+    #announcementsBoxTitle{
+        margin: 100px 0 0 20px;
+    }
+    #Title_First{
+        margin: calc(40vh - 50px - 100px) 0 0 20px;
+        font-size: 60px;
+    }
+    #P_First{
+        margin: 10px 0 0 20px;
+        font-size: 25px;
+        width: 300px;
+    }
+    .box{
+        height: 100vh;
+    }
+    .ShowImg{
+        display: none;
+    }
+    .Title{
+        margin: calc(40vh - 50px - 100px) 0 0 20px;
+    }
+    .Text {
+        font-size: 20px;
+        margin: 10px 0 0 20px;
+    }
+    #AboutTitle{
+        margin: 50px 0 0 20px;
+    }
+    #AboutText{
+        margin: 10px 0 0 20px;
+    }
+}
+@media screen and (min-width: 768px) and ( max-width: 1200px ){
+    .box{
+        scroll-snap-align: start; /* 每个项目在滚动结束时吸附到开始位置 */
+        height: calc(100vh - 60px);
+    }
+    .Text{
+        font-size: 20px;
+    }
+    .ShowImg{
+        display: none;
+    }
+}
+@media screen and (min-width: 1200px) and ( max-width: 1500px ) {
+    .box {
+        scroll-snap-align: start; /* 每个项目在滚动结束时吸附到开始位置 */
+        height: calc(100vh - 60px);
+    }
+
+    .Text {
+        font-size: 20px;
+    }
+
+    .ShowImg {
+        width: 45vw;
+    }
+}
+@media screen and (min-width: 1500px) {
+    .box {
+        scroll-snap-align: start; /* 每个项目在滚动结束时吸附到开始位置 */
+        height: calc(100vh - 60px);
+    }
+
+    .ShowImg {
+        width: 45vw;
+    }
+}

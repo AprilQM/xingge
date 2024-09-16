@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% block title %}云盘{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='CSS/cloud.css') }}">
+{% endblock %}
+
+{% block body %}
+<div id="Gray">
+    <div id="CreateDirBox" class="LightBox">
+        <h1 style="margin: 30px">创建文件夹</h1>
+        <label>
+            <h3 style="margin: 0 0 10px 30px">请输入文件夹名称</h3>
+            <input type="text" id="NewDirNameInput">
+            <h5 id="NewDirNameLight">提示</h5>
+        </label>
+        <button class="CancelButton" onclick="hidden_create_dir_box()">取消</button>
+        <button class="SubmitButton" onclick="create_dir()">创 建</button>
+    </div>
+    <div id="CreateLinkBox" class="LightBox">
+        <h1 style="margin: 30px">创建网页链接</h1>
+        <label>
+            <h3 style="margin: 0 0 10px 30px">请输入描述</h3>
+            <input type="text" id="NewLinkNameInput">
+            <h5 id="NewLinkNameLight">提示</h5>
+        </label>
+        <label>
+            <h3 style="margin: 100px 0 10px 30px">请输入网址</h3>
+            <input type="url" id="NewLinkWebInput">
+        </label>
+        <button class="CancelButton" onclick="hidden_create_link_box()">取消</button>
+        <button class="SubmitButton" onclick="submit_link()">创 建</button>
+    </div>
+    <div id="RenameBox" class="LightBox">
+        <h1 style="margin: 30px">重命名</h1>
+        <label>
+            <h3 style="margin: 0 0 10px 30px">请输入新名字</h3>
+            <input type="text" id="RenameInput">
+            <h5 id="RenameLight">提示</h5>
+        </label>
+        <button class="CancelButton" onclick="hidden_rename_box()">取消</button>
+        <button class="SubmitButton" onclick="submit_rename()">提 交</button>
+    </div>
+    <div id="MoveBox" class="LightBox">
+        <h1>请选择你想要移动到的位置：</h1>
+        <div id="FilesTree"></div>
+        <button id="MoveCancelButton" onclick="hidden_move_box()">取消</button>
+    </div>
+</div>
+<div id="FilesRightMenu">
+    <button id="ShowShareButton" class="FilesRightMenuButtons" onclick="RightMenuShare()">分享</button>
+    <button id="ShowRenameButton" class="FilesRightMenuButtons" onclick="RightMenuRename()">重命名</button>
+    <button id="ShowMoveButton" class="FilesRightMenuButtons" onclick="RightMenuMove()">移动</button>
+    <button id="DeleteButton" class="FilesRightMenuButtons" onclick="RightMenuDelete()">删除</button>
+    <button id="PreviewButton" class="FilesRightMenuButtons" onclick="RightMenuPreview()">预览</button>
+    <button id="DownloadButton" class="FilesRightMenuButtons" onclick="RightMenuDownload()">下载</button>
+    <button id="JoinDownloadListButton" class="FilesRightMenuButtons"
+        onclick="RightMenuJoinDownloadList()">加入下载</button>
+</div>
+<div id="menu">
+    <ul>
+        <li></li>
+        <li><button id="ToCloudButton" onclick="to_cloud()"
+                style="background-color: #f6f6f6;color: #163172;font-size: 40px"><span
+                    class="iconfont icon-cloud menuBtn"></span>
+                <t> 云盘</t>
+            </button></li>
+        {% if lv > 2 %}
+        <li><button id="ToTransmissionButton" onclick="to_transmission()"><span
+                    class="iconfont icon-download menuBtn"></span>
+                <t id="DownloadNum"> 下载(0)</t>
+            </button></li>
+        {% else %}
+        <li></li>
+        {% endif %}
+        <li><a href="/user_information" id="ToUserInformation"><span class="iconfont icon-user menuBtn"></span>
+                <t id="MenuUserName">{{ username }}</t>
+            </a></li>
+    </ul>
+</div>
+<div id="CloudUI" class="UIBox">
+    <div class="FunctionsBox">
+        <div id="PathLightBox">
+            <h3 style="color: #1e56a0" id="PathH3Light">当前：<button class="PathButton" onclick="dir_to(0)">{{ username
+                    }}</button></h3>
+            <h3 style="color: #1e56a0" id="PathH3"></h3>
+        </div>
+        <div id="FunctionButtonsBox">
+            <button class="iconfont icon-new_floder FunctionButtons" id="ToCreateDirButton"
+                onclick="show_create_dir_box()"></button>
+            <button class="iconfont icon-link FunctionButtons" id="ToCreateLinkButton"
+                onclick="show_create_link_box()"></button>
+            <form action="/upload" method="post" enctype="multipart/form-data" id="UploadForm">
+                <button class="iconfont icon-upload FunctionButtons" id="UploadButton"></button>
+                <input type="file" id="fileInput" name="files" multiple style="display: none">
+                <input type="submit" value="Upload" style="display: none">
+            </form>
+        </div>
+    </div>
+    <div style="position: absolute;top: 99px;width: 100%;display: flex;justify-content: center">
+        <div id="progressBar"
+            style="height: 3px;background-image: linear-gradient(to right, #1e56a0, #d6e4f0, #1e56a0);width: 0"></div>
+    </div>
+    <div id="UploadLightBox">
+        <span class="iconfont icon-upload" id="UploadLightBoxSpan"></span>
+    </div>
+    <div id="FilesBox"></div>
+</div>
+{% if lv > 2 %}
+<div id="TransmissionUI" class="UIBox">
+    <div id="TransmissionTop" class="FunctionsBox">
+
+    </div>
+    <div style="position: absolute;top: 99px;width: 100%;display: flex;justify-content: center">
+        <h3 style="color: #1e56a0;width: 100%;text-align: center;transform: translateY(-50px);">文件会先被压缩然后再启动下载任务</h3>
+    </div>
+    <div id="TransmissionBottom">
+        <h1 style="position: absolute;left: 2%;top: 0;color: #1e56a0; font-size: 40px">下载列表：</h1>
+        <a id="StartDownloadButton"><span class="iconfont icon-download"></span> 下载</a>
+        <div id="DownloadListBox">
+
+            <h2 id="DownloadUnderLight">暂无下载任务</h2>
+        </div>
+    </div>
+</div>
+{% endif %}
+<script>
+    const username = '{{ username }}'
+    const lv = {{ lv }}
+    DownloadList = []
+    if ({{ lv }} > 2) {
+        $id("StartDownloadButton").href = "/download_more?paths=" + DownloadList.join("@");
+    }
+    numDots = 0; // 生成小白点的数量
+    let datas = {{ files | safe}}
+</script>
+<script src="{{ url_for('static',filename='JS/cloud.js') }}"></script>
+<script>
+    create_ui()
+</script>
+{% endblock %}

@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{% block title %}管理员{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/admin.css') }}">
+{% endblock %}
+{% block body %}
+    <div id="Gray">
+        <div id="BanIpBox">
+            <h1>封禁管理</h1>
+            <h3>已封禁Ip：</h3>
+            <div id="HaveBanBox">
+                {% for i in ban_ips %}
+                    <button class="HaveBanIp" onclick="ban_ip_off(this)">{{ i }}</button>
+                {% endfor %}
+            </div>
+            <label>
+                <h2 id="NewBanH3">新的封禁Ip：</h2>
+                <input type="text" id="NewBanInput">
+                <button id="BanIpCancelButton" onclick="hidden_ban_ip_box()">取 消</button>
+                <button class="FlowButton" id="BanButton" onclick="ban_ip_in({{ ban_ips |safe }})">封 禁</button>
+            </label>
+        </div>
+        <div id="user_table_change_value_light">
+            <h1>修改</h1>
+            <h6 id="user_change_pos_light">请输入你想对第N行，第N列的数据进行修改后的值</h6>
+            <label>
+                <input type="text" placeholder="旧值" id="user_change_input" onkeydown="user_change_enter_down(event)">
+            </label>
+            <button id="user_change_cancel_button" onclick="hidden_user_change_light()">取 消</button>
+            <button id="user_change_submit_button" onclick="submit_new_user_value()">提 交</button>
+        </div>
+        <div id="CreateBox">
+            <h1>新建</h1>
+            <h3>请输入公告标题</h3>
+            <label>
+                <input type="text" id="CreateInput">
+                <h4 id="CreateLight">提示</h4>
+            </label>
+            <button id="CreateCancelButton" onclick="hidden_create_announcement_box()">取 消</button>
+            <button id="CreateSubmitButton" onclick="create_submit({{ announcements | safe}})">提 交</button>
+        </div>
+        <div id="CreateExchangeBox">
+            <h1 style="color: #1e56a0;margin: 30px">新建兑换码</h1>
+            <label style="color: #1e56a0;position: absolute;top: 100px;left: 30px;width: calc(100% - 60px)">
+                <h3>输入新兑换码：</h3>
+                <input type="text" id="CreateExchangeInput">
+                <h4 id="CreateExchangeLight" style="color: #f6f6f6">提示</h4>
+            </label>
+            <button id="CancelExchangeButton" onclick="hidden_create_exchange_box()">取消</button>
+            <button id="SubmitExchangeButton" onclick="submit_create_exchange()">创 建</button>
+        </div>
+    </div>
+    <div id="BanPE">
+        <h1>管理员界面只能在窗口宽度大于等于900px的设备上面运行</h1>
+    </div>
+	<div id="background">
+        <div id="menu">
+            <ul>
+                <li style="margin: 0 0 30px 0;padding: 20px 30px 20px 50px;"></li>
+                <li class="li"><button class="menu_button" onclick="show_flow()">流量查询</button></li>
+                <li class="li"><button class="menu_button" onclick="show_user()">用户管理</button></li>
+                <li class="li"><button class="menu_button" onclick="show_announcements()">公告发布</button></li>
+                <li class="li"><button class="menu_button" onclick="show_exchange()">兑换管理</button></li>
+            </ul>
+        </div>
+        <div id="flowBox" class="adminBox" style="display: block">
+            <div id="IpBox" class="FlowBoxs">
+                <h1>Ip(前10)：</h1>
+                <a href="https://iplark.com/search" target="_blank" id="SearchIPButton" class="FlowButton">查询IP归属地</a>
+                <button id="BanIpButton" class="FlowButton" onclick="show_ban_ip_box()">封禁 IP</button>
+                <canvas id="IpChart"></canvas>
+            </div>
+            <div id="TDBox" class="FlowBoxs">
+                <h1>访问日期(前10)：</h1>
+                <canvas id="TimeDaysChart"></canvas>
+            </div>
+            <div id="THBox" class="FlowBoxs">
+                <h1>访问时段(前10)：</h1>
+                <canvas id="TimeHoursChart"></canvas>
+            </div>
+            <div>
+                <h1>访问路由(前10)：</h1>
+                <canvas id="UrlChart"></canvas>
+            </div>
+            <div id="ErrorBox" class="FlowBoxs">
+                <h1>发生错误(前10)：</h1>
+                <canvas id="ErrorChart"></canvas>
+            </div>
+            <div id="LogsBox" class="FlowBoxs" style="height: 900px">
+                <h1>日志文件内容（文件大小上限：1MB）：</h1>
+                <button id="ShowLogsButton" onclick="show_los()">获取</button>
+                <div id="logsText" style="width: calc(100% - 260px);position: absolute; left: 80px; background-color: #ffffff; height: 600px; overflow: auto;margin: 30px 0 40px 0 ; padding: 60px"></div>
+                <h1 style="color: #f6f6f6">延展</h1>
+            </div>
+        </div>
+        <div id="userBox" class="adminBox">
+            <label>
+                <input type="text" placeholder='表达语句' id="findUserInput" onkeydown="findUser(event)">
+            </label>
+            <div id="user_table_box">
+                <table id="user_table">
+                    <thead>
+                        <tr>
+                            <th>Id(id)</th>
+                            <th>用户名(username)</th>
+                            <th>密码(password)</th>
+                            <th>邮箱(email)</th>
+                            <th>注册时间(register_time)</th>
+                            <th>账号等级(lv)</th>
+                            <th>时间加速(add_time)</th>
+                            <th>邀请人Id(inviter)</th>
+                            <th>邀请数(invited)</th>
+                            <th>邀请码(invite_code)</th>
+                            <th>上次使用邀请码的时间(invite_code_use_time)</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div id="announcementsBox" class="adminBox">
+            <label for="announcementsChose"></label><select name="" id="announcementsChose">
+                {% for i in  announcements %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+            <div id="announcementsText">
+                <label>
+                    <textarea name="announcementsShow" rows="4" cols="50" id="announcementsShow"></textarea>
+                </label>
+            </div>
+            <button class="announcementsButton" id="CreateButton" onclick="show_create_announcement_box()">新建</button>
+            <button class="announcementsButton" id="UploadButton" onclick="upload_announcements()">上传</button>
+            <button class="announcementsButton" id="DeleteButton" onclick="delete_announcements()">删除</button>
+        </div>
+        <div id="exchangeBox" class="adminBox">
+            <div id="TopFrame">
+                <button id="CreateExchangeButton" onclick="show_create_exchange_box()">新 建</button>
+            </div>
+            <div id="LeftFrame">
+                <h1>兑换码描述表：</h1>
+                <div id="ExchangeDescriptBox" class="TableBox">
+                    <table id="ExchangeDescriptionTable">
+                        <tr>
+                            <th>Id(id)</th>
+                            <th>兑换码(code)</th>
+                            <th>奖励(reward)</th>
+                            <th>时效(over_time)</th>
+                            <th>拥有人数(had)</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="RightFrame">
+                <h1>兑换码拥有表：</h1>
+                <div id="ExchangeWhoHaveBox" class="TableBox">
+                    <table id="ExchangeWhoHaveTable">
+                        <tr id="ExchangeWhoHaveTr">
+                            <th>Id(id)</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static',filename='JS/admin.js') }}"></script>
+    <script src="{{ url_for('static',filename='JS/chart.js') }}"></script>
+    <script>
+        const numDots = 0; // 生成小白点的数量
+        add_chart($id("IpChart"), {{ charts['ip'] | safe }}, 'Ip访问次数')
+        add_chart($id("TimeDaysChart"), {{ charts['time(d)'] | safe }}, '日期访问次数')
+        add_chart($id("TimeHoursChart"), {{ charts['time(h)'] | safe }}, '时段访问次数')
+        add_chart($id("UrlChart"), {{ charts['url'] | safe }}, '路由访问次数')
+        add_chart($id("ErrorChart"), {{ charts['error'] | safe }}, '发生错误次数')
+        $id("announcementsChose").addEventListener('change', function() {
+            $id("announcementsShow").value = {{ announcements | safe }}[this.value]
+        });
+        create_exchange({{ exchange_description | tojson | safe}}, {{ exchanges | tojson | safe}}, {{ exchange_who_have_table | tojson | safe}})
+
+
+        const logsText = $id("logsText");
+        logsText.innerHTML  = "为防止加载错误，查看日志请点击获取按钮";
+        function show_los(){
+            ajax('POST', "/get_logs", null, function (response){
+                logsText.innerHTML  = response.replace(/（n）/g, "<br>");
+            },function (){
+                alert("获取失败！网络错误")
+            })
+        }
+        const announcementsChose = $id("announcementsChose").value;
+        const announcementsShow = $id("announcementsShow");
+        const announcements = {{ announcements | safe }}
+        if (!!announcementsChose){
+            console.log(announcements[announcementsChose])
+            announcementsShow.innerHTML = announcements[announcementsChose]
+        }
+
+
+    </script>
+{% endblock %}

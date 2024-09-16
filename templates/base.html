@@ -1,0 +1,35 @@
+<!-- 该文件只有背景和任务栏 -->
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='ICON/iconfont.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='Logo2.png') }}" type="image/x-icon">
+    <title>星阁 | {% block title%}{% endblock %}</title>
+    <style>
+    </style>
+    {% block head%}{% endblock %}
+</head>
+<body>
+    <script src="{{ url_for('static',filename='JS/kits.js') }}"></script>
+    <div class="top">
+        <ul>
+            <li><img src='{{ url_for('static',filename='Logo1.png') }}' id="topLogo" alt="Logo" onclick="goHome()"></li>
+            <li><button class="topButton" onclick="goHome()"><span class="iconfont icon-home topSpan"></span> <t class="PhoneHidden">主页</t></button></li>
+            <li><button class="topButton" onclick="goCloud()"><span class="iconfont icon-cloud topSpan"></span> <t class="PhoneHidden">云盘</t></button></li>
+            <li><button class="topButton" onclick="goForum()"><span class="iconfont icon-Browser topSpan"></span> <t class="PhoneHidden">论坛</t></button></li>
+            <li><button class="topButton" onclick="goCollaboration()"><span class="iconfont icon-Collaboration topSpan"></span> <t class="PhoneHidden">协作</t></button></li>
+            <li>
+                <div style="position: fixed;top: 10px;z-index: 1000;right: 30px;">
+                    <a href="/user_information" style="color: #f6f6f6;font-size: 30px;text-decoration: none;font-weight: bold" id="TopUserName"><span class="iconfont icon-user topSpan"></span><t class="PhoneHidden"> {{ username }}</t></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    {% block body%}{% endblock %}
+    <script src="{{ url_for('static',filename='JS/base.js') }}"></script>
+</body>
+</html>

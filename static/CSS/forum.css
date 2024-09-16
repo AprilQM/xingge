@@ -1,0 +1,506 @@
+body {
+    background-color: #f6f6f6;
+}
+
+#Menu {
+    background-color: #163172;
+    width: 200px;
+    position: fixed;
+    height: calc(100% - 60px);
+    top: 60px;
+    left: 0;
+    border-top: #f6f6f6 1px solid;
+}
+
+.menuBtn {
+    width: 200px;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 20px 0 20px 0;
+}
+
+#ToForumHomeButton {
+    background-color: #f6f6f6;
+    color: #163172;
+    font-size: 40px;
+}
+
+#ToBrowseCode {
+    background-color: #163172;
+    color: #f6f6f6;
+}
+
+#ToBrowseCode:hover {
+    background-color: #f6f6f6;
+    color: #163172;
+    font-size: 40px;
+}
+
+#ToUserInformation {
+    width: 200px;
+    background-color: initial;
+    font-family: "Microsoft YaHei UI", serif;
+    color: #f6f6f6;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0;
+    position: fixed;
+    text-decoration: none;
+    font-size: 27px;
+    font-weight: bold;
+    bottom: 30px;
+    text-align: center;
+}
+
+#ToUserInformation span {
+    font-size: 50px;
+}
+
+#ToBrowseCode {
+    position: fixed;
+    text-decoration: none;
+    font-size: 27px;
+    font-weight: bold;
+    top: 255px;
+    text-align: center;
+}
+
+#ToForumHomeButton {
+    position: fixed;
+    top: 160px;
+}
+
+.menuSpan {
+    font-size: 50px;
+    width: 200px;
+}
+
+#TopFunctionBox {
+    width: calc(100% - 200px);
+    height: 100px;
+    position: fixed;
+    top: 60px;
+    left: 200px;
+    border-bottom: #1e56a0 1px solid;
+}
+
+#CreatePostButton {
+    border: #1e56a0 2px solid;
+    color: #f6f6f6;
+    background-color: #1e56a0;
+    padding: 8px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    border-radius: 3px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#CreatePostButton span {
+    font-size: 25px;
+}
+
+#CreatePostButton:hover {
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+
+#FindForumButton {
+    color: #1e56a0;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10px;
+    left: 180px;
+    z-index: 2;
+    background-color: #f6f6f6;
+}
+
+#FindForumButton:hover {
+    color: #163172;
+}
+
+input {
+    z-index: 1;
+    position: absolute;
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    font-size: 30px;
+    transition: 0.3s ease-in-out;
+}
+
+#FindForumInput {
+    bottom: 10px;
+    left: 230px;
+    width: 0;
+    border-bottom: #f6f6f6 2px solid;
+}
+
+input:focus {
+    outline: none;
+    /* 设置选中时的轮廓样式 */
+    background-color: initial;
+    /* 设置选中时的背景色 */
+}
+
+#Gray {
+    position: fixed;
+    width: 100%;
+    height: 1000%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+#CreatePostLightBox {
+    z-index: 1001;
+    width: 60%;
+    height: 700px;
+    position: fixed;
+    top: calc(50% - 350px);
+    left: 20%;
+    background-color: #f6f6f6;
+    padding: 30px;
+    display: none;
+}
+
+#PostContent {
+    resize: none;
+    position: absolute;
+    top: 80px;
+    width: calc(100% - 60px);
+    height: 400px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#CancelButton {
+    border: none;
+    background-color: initial;
+    color: #1e56a0;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    right: 180px;
+    bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#SubmitButton {
+    background-color: #1e56a0;
+    color: #f6f6f6;
+    border: #1e56a0 2px solid;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    right: 80px;
+    bottom: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+#CancelButton:hover {
+    color: #163172;
+}
+
+#SubmitButton:hover {
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+
+#BottomPostsBox {
+    position: fixed;
+    height: calc(100% - 161px);
+    width: calc(100% - 200px);
+    top: 161px;
+    left: 200px;
+    overflow: auto;
+}
+
+.PostBox {
+    width: calc(100% - 20px);
+    height: auto;
+    padding: 10px;
+    margin: 0 0 10px 0;
+    border-bottom: #163172 1px solid;
+    cursor: pointer;
+}
+
+.PostLevelImg,
+#PostAuthorImg {
+    width: 40px;
+}
+
+#PostContentBackground {
+    height: calc(100% - 60px);
+    width: calc(100% - 200px);
+    position: fixed;
+    z-index: 20;
+    background-color: #f6f6f6;
+    left: 200px;
+    top: 60px;
+    display: none;
+    overflow: auto;
+}
+
+#PostContentBox {
+    width: calc(100% - 60px);
+    height: auto;
+    border-bottom: #1e56a0 2px solid;
+    padding: 0 30px;
+    color: #163172;
+}
+
+#PostTitleH1 {
+    font-weight: bold;
+    font-size: 70px;
+    margin: 60px 0 10px 0;
+}
+
+#PostAuthorH2 {
+    font-weight: bold;
+    font-size: 20px;
+    display: inline;
+}
+
+#PostTimeH3 {
+    font-weight: bold;
+    font-size: 12px;
+    color: #d6e4f0;
+}
+
+.PostContentH4 {
+    font-weight: bold;
+    font-size: 30px;
+    display: inline;
+}
+
+.PostLinkA {
+    font-weight: bold;
+    font-size: 30px;
+    color: #1e56a0;
+    margin: 8px 0;
+    text-decoration: none;
+}
+
+#Back {
+    color: #1e56a0;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background-color: initial;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    transition: 0.3s;
+}
+
+#Back:hover {
+    color: #163172;
+    transform: scale(1.1);
+}
+
+#ContentBox {
+    background-color: #ffffff;
+    width: calc(100% - 120px);
+    height: 440px;
+    overflow: auto;
+    padding: 60px;
+    margin: 0 0 30px 0;
+    color: black;
+}
+
+.CommentBox {
+    width: calc(100% - 40px);
+    height: auto;
+    border-bottom: #163172 1px solid;
+    min-height: 100px;
+    padding: 20px;
+    margin: 40px 0 0 0;
+}
+
+.Commentator {
+    color: #1e56a0;
+    font-size: 20px;
+    display: inline;
+}
+
+.CommentContent {
+    color: #1e56a0;
+    font-size: 30px;
+    margin: 20px 0 0 0;
+}
+
+#PostCreateLight {
+    position: absolute;
+    left: 30px;
+    top: 150px;
+    color: #f6f6f6;
+}
+
+#ToCreateCommentButton {
+    border: #1e56a0 2px solid;
+    padding: 5px 10px;
+    color: #f6f6f6;
+    background-color: #1e56a0;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 30px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#ToCreateCommentButton:hover {
+    color: #1e56a0;
+    background-color: #f6f6f6;
+}
+
+#CreateCommentLightBox {
+    width: 420px;
+    height: 393px;
+    position: fixed;
+    z-index: 1001;
+    padding: 10px;
+    top: calc(50% - 207px);
+    left: calc(50% - 220px);
+    display: none;
+    background-color: #f6f6f6;
+}
+
+#CommentEdit {
+    resize: none;
+    width: calc(100% - 30px);
+    height: 250px;
+}
+
+#PostRightMenu,
+#CommentRightMenu {
+    box-shadow: #222222 0 0 5px;
+    transition: width 0.3s;
+    z-index: 30;
+    background-color: #fff;
+    width: 0;
+    height: auto;
+    position: fixed;
+    overflow: hidden;
+}
+
+#PostRightMenu button,
+#CommentRightMenu button {
+    white-space: nowrap;
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    color: #163172;
+    background-color: initial;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/*手机适配*/
+@media screen and (max-width: 1145px) {
+    #ContentBox {
+        width: calc(100% - 40px);
+        height: 480px;
+        overflow: auto;
+        padding: 10px;
+        margin: 0 0 30px 0;
+    }
+
+    #PostContentBackground {
+        width: calc(100% - 30px);
+        left: 30px;
+    }
+
+    #BottomPostsBox {
+        height: calc(100vh - 160px);
+        width: calc(100% - 30px);
+        top: 160px;
+        left: 30px;
+    }
+
+    #PostTitleInput {
+        width: 70%;
+        position: absolute;
+    }
+
+    #CreatePostLightBox {
+        height: calc(100vh - 80px);
+        width: calc(100vw - 80px);
+        top: 10px;
+        left: 10px;
+    }
+
+    #FindForumInput {
+        bottom: 5px;
+        left: 140px;
+        font-size: 18px;
+    }
+
+    #FindForumButton {
+        left: 100px;
+        font-size: 30px;
+        bottom: 5px;
+    }
+
+    #CreatePostButton {
+        padding: 8px 15px;
+        font-size: 10px;
+        bottom: 5px;
+        left: 5px;
+    }
+
+    #CreatePostButton span {
+        font-size: 13px;
+    }
+
+    #TopFunctionBox {
+        width: calc(100% - 30px);
+        left: 30px;
+    }
+
+    #Menu {
+        width: 30px;
+    }
+
+    #ToUserInformation {
+        word-wrap: anywhere;
+        font-size: 20px;
+        width: 30px;
+    }
+
+    #ToUserInformation span {
+        font-size: 20px;
+    }
+
+    .menuBtn span {
+        font-size: 20px;
+    }
+
+    .menuBtn {
+        font-size: 20px;
+        width: 30px;
+    }
+
+    .menuBtn t {
+        display: none;
+    }
+
+    .menuSpan {
+        font-size: 30px;
+    }
+}

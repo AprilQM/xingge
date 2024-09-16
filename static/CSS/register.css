@@ -1,0 +1,70 @@
+.RegisterBox {
+    background-color: #f6f6f6;
+    width: 440px;
+    height: 500px;
+    position: absolute;
+    top: calc(100% + 250px);
+    z-index: 2;
+    overflow: hidden;
+    animation: BoxShow 0.3s cubic-bezier(.35, .49, .66, 1.37);
+}
+#AuthLogo{
+    width: 60px;
+    margin: 30px 0 0 30px;
+    border-radius: 30%;
+}
+.AuthButton{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    bottom: 30px;
+    right: 30px;
+    border: #1e56a0 2px solid;
+    background-color: #1e56a0;
+    font-size: 20px;
+    color: #f6f6f6;
+    cursor: pointer;
+    transition: 0.3s;
+    animation: RightInto 0.3s cubic-bezier(.35,.49,.66,1.37);
+}
+.AuthButton:hover{
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+#register_form{
+    animation: RightInto 0.3s cubic-bezier(.35,.49,.66,1.37);
+}
+input{
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    width: 90%;
+    font-size: 18px;
+}
+input:focus {
+    outline: none; /* 设置选中时的轮廓样式 */
+    background-color: initial; /* 设置选中时的背景色 */
+}
+h5{
+    margin: 0 0 10px;
+    color: #f6f6f6
+}
+@keyframes RightInto {
+    from{
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes BoxShow {
+    from{
+        transform: translateY(20px);
+        height: 460px;
+    }
+    to{
+        height: 500px;
+    }
+}

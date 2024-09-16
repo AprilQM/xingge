@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% block title %}{{ username }}{% endblock %}
+{% block head %}
+	<link rel="stylesheet" href="{{ url_for('static',filename='CSS/user_information.css') }}">
+{% endblock %}
+{% block body %}
+    <script src="{{ url_for('static',filename='JS/user_information.js') }}"></script>
+    <script>
+           document.addEventListener("DOMContentLoaded", function() {
+               document.getElementById("change_name_form").addEventListener("submit", function (event) {
+                      event.preventDefault(); // 阻止默认的表单提交行为
+
+                     // 在这里执行你想要的操作，比如调用函数等
+                     const username = '{{ username }}';
+                     change_name(username);
+
+               });
+               document.getElementById("change_password_form").addEventListener("submit", function (event) {
+                     event.preventDefault(); // 阻止默认的表单提交行为
+                     change_password();
+
+               });
+               document.getElementById("change_email_form").addEventListener("submit", function (event) {
+                    event.preventDefault(); // 阻止默认的表单提交行为
+                    change_mail()
+
+
+               });
+           });
+    </script>
+	<div id="mainBox">
+        <div id="Left">
+            <button style="" onclick="to_change_name()" id="to_change_name_button">{{ username }}</button>
+            <div id="level" style="position: relative">
+                <img src='{{ url_for('static',filename='levels/lv'+lv+'.png') }}' alt="lv" id="levelPng">
+            </div>
+            <br><br>
+            <div id="information">
+                <h2 class="Information">邮箱：<button class="informationButton" onclick="to_change_mail()">{{ email }}</button></h2><br><br>
+                <h2 class="Information">注册时间：{{ register_time }}</h2><br><br>
+                <h2 class="Information">账户等级：<button class="informationButton" onclick="level()">Lv{{ lv }}</button></h2><h2 style="margin: 0 0 0 10px;background-color: #1e56a0;color: #f6f6f6;border-radius: 5px;padding: 0 5px 0 5px;font-size: 20px">{{ level_state }}</h2><br><br>
+                <h2 class="Information">时间增加：{{ add_time }}</h2><br><br>
+                <h2 class="Information">邀请人：{{ inviter }}</h2><br><br>
+                <h2 class="Information">邀请数：{{ invited }}</h2><br><br>
+                <h2 class="Information">邀请码：<button class="informationButton" onclick="copyCode('{{ invite_code }}')">{{ invite_code }}</button></h2><br><br>
+                {% if cd == '邀请码未解锁' %}
+                    <h2 class="Information">邀请码CD：邀请码未解锁</h2>
+                {% else %}
+                    {% if cd <= 0 %}
+                        <h2 class="Information">邀请码CD：冷却完成</h2>
+                    {% else %}
+                        <h2 class="Information">邀请码CD：{{ cd }}天</h2>
+                    {% endif %}
+                {% endif %}
+
+            </div>
+            <br>
+            <button style="border: none;background-color: initial;cursor: pointer" class="informationUnderButton" onclick="to_change_password()">修改密码</button>
+            <a href="/exchange" class="informationUnderButton" style="margin: 0 0 0 30px">兑换</a>
+            <a href="/logout" class="informationUnderButton" style="margin: 0 0 0 30px">退出登录</a>
+        </div>
+       <div id="Right">
+            <div id="RightBox1" class="RightBox">
+                <h1 style="position: absolute;margin: 30px;font-size: 50px;color: #f6f6f6">修改用户名</h1>
+                <form id="change_name_form">
+                    <label style="position: absolute;top: 200px;left: 30px">
+                        <h1>请输入新的用户名</h1>
+                        <input type="text" style="width: 600px" id="new_username">
+                        <h3 id="ChangeNameLight"></h3>
+                    </label>
+                </form>
+                <button class="RightButton" onclick="change_name('{{ username }}')">提 交</button>
+            </div>
+            <div id="RightBox2" class="RightBox">
+                <h1 style="position: absolute;margin: 30px;font-size: 50px;color: #f6f6f6">修改邮箱</h1>
+                <form id="change_email_form">
+                    <label style="position: absolute;top: 150px;left: 30px">
+                        <h1>输入邮箱：</h1>
+                        <input type="email" style="width: 600px" id="email_input">
+                        <h3 id="EmailLight"></h3>
+                        <h1>输入验证码：</h1>
+                        <input type="text" style="width: 200px" id="code_input">
+                        <h3 id="CodeLight"></h3>
+                        <button type="button" id="send_code_button" onclick="send_code()">获取验证码</button>
+                        <h3 style="position: absolute;right: 40px;bottom: 10px;color: #1e56a0" id="SendCodeLight">验证码已发<br>送至邮箱</h3>
+                    </label>
+                </form>
+                <button class="RightButton" onclick="change_mail()">提 交</button>
+            </div>
+            <div id="RightBox3" class="RightBox" style="position: relative">
+                <h1 style="position: absolute;margin: 30px;font-size: 50px;color: #f6f6f6">等级细则</h1>
+                <div style="top: 130px;position: absolute;padding: 10px">
+                    <p class="levelXZ">lv1：最基础的等级，拥有批量上传和单项下载云盘文件的权限，下一级所需天数：4天</p>
+                    <p class="levelXZ">lv2：拥有使用文件夹的权限，下一级所需天数：30天</p>
+                    <p class="levelXZ">lv3：拥有批量下载的权限（下载的为压缩包），下一级所需天数：12天</p>
+                    <p class="levelXZ">lv4：拥有分享文件夹的权限，创建帖子的权限，移动文件位置的权限，下一级所需天数：63天</p>
+                    <p class="levelXZ">lv5：拥有预览图片,pdf,mp3的权限，下一级所需天数：126天</p>
+                    <p class="levelXZ">lv6：开启邀请码，邀请码CD：7天，下一级所需天数：254天</p>
+                    <p class="levelXZ">lv7：邀请码CD：3天，下一级所需天数：510天</p>
+                    <p class="levelXZ">lv8：普通用户可达最高等级，邀请码CD：1天</p>
+                    <p class="levelXZ">lv9：管理员等级，拥有所有权限，邀请码cd：0天</p>
+                    <p class="levelXZ">日常+1天，邀请1人且被邀请人绑定了邮箱+20天，网站四周可能会出现升级兑换码，找到可兑换天数</p>
+                </div>
+            </div>
+            <div id="RightBox4" class="RightBox">
+                <h1 style="position: absolute;margin: 30px;font-size: 50px;color: #f6f6f6">修改密码</h1>
+                <form id="change_password_form">
+                    <label style="position: absolute;top: 150px;left: 30px">
+                        <h1>请输入旧密码</h1>
+                        <input type="password" style="width: 600px" id="old_password">
+                        <h3 id="ChangePasswordOldLight" style="margin: 0"></h3>
+                        <h1>请输入新密码</h1>
+                        <input type="password" style="width: 600px" id="new_password">
+                        <h3 id="ChangePasswordNewLight" style="margin: 0"></h3>
+                        <h1>请确认新密码</h1>
+                        <input type="password" style="width: 600px" id="confirm_password">
+                        <h3 id="ChangePasswordConfirmLight" style="margin: 0"></h3>
+                    </label>
+                </form>
+                <button class="RightButton" onclick="change_password('{{ id }}')">提 交</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const numDots = 0;
+        const lv = {{ lv }}
+    </script>
+{% endblock %}

@@ -1,0 +1,135 @@
+#mainBox{
+    position: fixed;
+    background-color: #f6f6f6;
+    z-index: 2;
+    width: 100%;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+}
+h2{
+    margin: 0 0 0 80px;
+    display: inline;
+    font-size: 30px;
+}
+.informationButton{
+    margin: 0;
+    display: inline;
+    font-size: 30px;
+    background-color: initial;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+.informationUnderButton{
+    text-decoration: none;
+    color: #d6e4f0;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0 0 0 80px;
+    transition: 0.3s;
+}
+.informationUnderButton:hover{
+    color: #1e56a0;
+}
+#Right{
+    height: 3250px;
+    position: absolute;
+    right: 50px;
+    top: 100vh;
+    transition: 0.6s ease-in-out;
+}
+#Left{
+    height: calc(100vh - 60px - 140px);
+    padding: 70px 0;
+    overflow: auto;
+}
+.RightBox{
+    width: 700px;
+    height: 700px;
+    background-color: #1e56a0;
+    color: #f6f6f6;
+    border-radius: 20px;
+    margin: 0 0 calc((100vh - 60px) - 700px) 0;
+    position: relative;
+}
+.levelXZ{
+    margin: 0 0 0 30px;
+    font-size: 22px;
+    font-weight: bold
+}
+input{
+    color: #f6f6f6;
+    border: none;
+    border-bottom: 2px solid #f6f6f6;
+    background-color: initial;
+    width: 90%;
+    font-size: 30px;
+}
+input:focus {
+    outline: none; /* 设置选中时的轮廓样式 */
+    background-color: initial; /* 设置选中时的背景色 */
+}
+.RightButton{
+    background-color: #1e56a0;
+    color: #f6f6f6;
+    border: #f6f6f6 2px solid;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    right: 80px;
+    bottom: 80px;
+    padding: 5px 20px 5px 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.RightButton:hover{
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+#send_code_button{
+    background-color: #f6f6f6;
+    color: #1e56a0;
+    border: #1e56a0 2px solid;
+    font-size: 30px;
+    position: absolute;
+    right: 180px;
+    bottom: 20px;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#send_code_button:hover{
+    background-color: #1e56a0;
+    color: #f6f6f6;
+}
+#to_change_name_button{
+    font-size: 80px;
+    margin: 0 0 0 80px;
+    font-weight: bold;
+    background-color: initial;
+    border: none;
+    cursor: pointer
+}
+#levelPng{
+    height: 40px;
+    margin: 10px 0 0 80px;
+    display: inline
+}
+
+/*手机适配*/
+@media screen and (max-width: 1234px) {
+    #to_change_name_button{
+        margin: 10px 0 0 10px;
+        font-size: 50px;
+    }
+    #levelPng{
+        margin: 10px 0 0 10px;
+    }
+    .Information {
+        margin: 0 0 0 8px;
+    }
+    .informationUnderButton{
+        margin: 0 0 0 10px;
+    }
+}

@@ -1,0 +1,89 @@
+.loginBox{
+    background-color: #f6f6f6;
+    width: 440px;
+    height: 413px;
+    position: absolute;
+    top: calc(100% + 250px);
+    z-index: 2;
+    overflow: hidden;
+    animation: BoxShow 0.3s cubic-bezier(.35,.49,.66,1.37);
+}
+#AuthLogo{
+    width: 60px;
+    margin: 30px 0 0 30px;
+    border-radius: 30%;
+}
+#AuthButton{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    bottom: 30px;
+    right: 30px;
+    border: #1e56a0 2px solid;
+    background-color: #1e56a0;
+    font-size: 20px;
+    color: #f6f6f6;
+    cursor: pointer;
+    transition: 0.3s;
+    animation: RightInto 0.3s cubic-bezier(.35,.49,.66,1.37);
+}
+#AuthButton:hover{
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+@keyframes RightInto {
+    from{
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes BoxShow {
+    from{
+        transform: translateY(20px);
+        height: 373px;
+    }
+    to{
+        height: 413px;
+    }
+}
+#LoginForm{
+    margin: 20px;
+    animation: RightInto 0.3s cubic-bezier(.35,.49,.66,1.37);
+}
+.AuthInput{
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    width: 90%;
+    font-size: 18px;
+}
+input:focus {
+    outline: none; /* 设置选中时的轮廓样式 */
+    background-color: initial; /* 设置选中时的背景色 */
+}
+#forgetPassword,#goRegister{
+    position: absolute;
+    color: #1e56a0;
+    font-size: 18px;
+    font-weight: bold;
+    left: 20px;
+    margin-top: 10px;
+    animation: RightInto 0.3s cubic-bezier(.35,.49,.66,1.37);
+    border: none;
+    background-color: initial;
+    cursor: pointer;
+}
+#forgetPassword:hover,#goRegister:hover{
+    color: #163172;
+}
+/*手机适配*/
+@media screen and (max-width: 768px) {
+    .loginBox{
+        width: calc(100vw - 8px);
+        left: 4px;
+    }
+}

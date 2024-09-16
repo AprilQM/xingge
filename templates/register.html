@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}注册{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/register.css') }}">
+{% endblock %}
+{% block body %}
+    <script src='{{ url_for('static',filename='JS/register.js') }}'></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("register_form").addEventListener("submit", function (event) {
+                event.preventDefault(); // 阻止默认的表单提交行为
+                register()
+            });
+        })
+    </script>
+    <div class="RegisterBox" id="RegisterBox1">
+        <img src='{{ url_for('static',filename='Logo1.png') }}' alt="Logo" id="AuthLogo">
+        <form id="register_form" style="position: absolute;top: 100px;left: 30px;">
+            <label>
+                <h3 style="margin: 0">用户名</h3>
+                <input type="text" style="width: 300px" id="username_input">
+                <h5 id="username_light">用户名提示</h5>
+            </label>
+            <label>
+                <h3 style="margin: 0">邀请码</h3>
+                <input type="text" style="width: 300px" id="code_input">
+                <h5 id="code_light">邀请码提示</h5>
+            </label>
+            <label>
+                <h3 style="margin: 0">密码</h3>
+                <input type="password" style="width: 300px" id="password_input">
+                <h5 id="password_light">密码提示</h5>
+            </label>
+            <label>
+                <h3 style="margin: 0">确认密码</h3>
+                <input type="password" style="width: 300px" id="confirm_password_input">
+                <h5 id="confirm_password_light">确认密码提示</h5>
+            </label>
+        </form>
+        <button class="AuthButton" onclick="register()">注 册</button>
+    </div>
+    <div style="position: absolute;top: 10000px;color: #f6f6f6;font-size: 30px">3</div>
+    <script>
+        const numDots = 300;
+    </script>
+{% endblock %}

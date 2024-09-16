@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+{% block title %}星阁使用文档{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/document.css') }}">
+{% endblock %}
+{% block body %}
+
+<h1 id="Title">星阁使用文档</h1>
+<h2 id="DocumentAuthor">作者：AprilQM</h2>
+<div id="TextBox">
+    <h3 class="subhead">1.云盘</h3>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(1) 进入云盘。</span>点击上方<span class="stressed_1"><span
+                class="iconfont icon-cloud"></span>
+            云盘</span>(PC版， 手机版则只有<span class="stressed_1"><span class="iconfont icon-cloud"></span></span>)来进入云盘。
+        或者在网址栏输入目录为<span class="stressed_2"><a href="/cloud" style="text-decoration: none">/cloud</a></span>。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(2) 创建文件夹。</span>该功能在<span
+            class="stressed_2">lv2</span>及以后解锁(详细信息可在用户信息的等级细则中查询)。点击上方<span class="stressed_1"><span
+                class="iconfont icon-new_floder"></span></span>
+        在跳出的窗口中输入想要创建文件夹的名字，点击<span class="stressed_1">创 建</span>即可创建文件夹。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(3) 删除文件(文件夹)。</span>右键文件，在出现的菜单中点击<span
+            class="stressed_1">删除</span>按钮后，再三确认，确定该文件是你要删除的
+        文件(文件夹)之后再点击 <span class="stressed_1">确定</span>即可删除文件(文件夹)。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(4) 创建网络链接。</span>点击上方<span class="stressed_1"><span
+                class="iconfont icon-link"></span></span>
+        在跳出的窗口中输入你想对这个网络链接的称呼和这个网络链接的具体网址<span class="stressed_1">请确认该网址为全部内容，比如你所打的网址是否最前方为http或https，这很重要！！！</span>
+        确认完你的所有输入之后再点击<span class="stressed_1">创 建</span>即可创建网络链接。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(5) 重命名文件(文件夹)。</span>右键文件，在出现的菜单中点击<span
+            class="stressed_1">重命名</span>按钮后，输入你想要将该文件重命名后的
+        名字，确认你的名字无误后点击<span class="stressed_1">提 交</span>即可完成重命名。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(6) 上传文件。</span>点击上方<span class="stressed_1"><span
+                class="iconfont icon-upload"></span></span>
+        在跳出的窗口中选择你要上传的文件(可以上传多个)，确认后选择窗口会消失，上传进度条 <span class="stressed_1">在上方工具按钮的下面，那条分割线即为进度条</span>进度条跑完之后上传即为成功！
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(7) 下载文件。</span>正常文件点击文件名即可触发下载<span
+            class="stressed_1">图片</span>类型的文件需要右键文件，在出现的菜单中点击<span class="stressed_1">下载</span>按钮才能触发</span>
+        下载的文件可以在浏览器的默认下载路径中找到， <span class="stressed_1">ctrl + J</span> 在绝大数浏览器中可以打开下载任务。这之中可能有方法到达你的下载目录。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(8) 批量下载文件。</span>该功能在<span
+            class="stressed_2">lv3</span>及以后解锁(详细信息可在用户信息的等级细则中查询)。
+        点击文件右侧的<span class="stressed_1">入队</span>按钮之后可以在左侧菜单栏中的<span class="stressed_1"><span
+                class="iconfont icon-download"></span>下载(0)</span>(PC版， 手机版则只有<span class="stressed_1"><span
+                class="iconfont icon-download"></span></span>)
+        PC版的下载右侧的<span class="stressed_1">()</span>中的数字代表有多少个文件在下载列表中。点击下载队伍列表上方的<span class="stressed_1"><span
+                class="iconfont icon-download"></span>下载</span>按钮之后即可触发下载。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(9) 预览文件。</span>该功能在<span
+            class="stressed_2">lv5</span>及以后解锁(详细信息可在用户信息的等级细则中查询)。
+        普通的pdf,mp3,mp4文件可以通过右键文件，在出现的菜单中点击<span class="stressed_1">预览</span>按钮即可触发预览（前提是你的浏览器支持播放这些文件）。特殊的<span
+            class="stressed_1">图片</span>类型文件只需点击文件名即可触发预览。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(10) 移动文件(文件夹)。</span>该功能在<span
+            class="stressed_2">lv4</span>及以后解锁(详细信息可在用户信息的等级细则中查询)。
+        右键文件，在出现的菜单中点击<span class="stressed_1">移动</span>按钮，在跳出的窗口中选择你要移动到的位置进行点击，即可完成移动。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(11) 分享文件夹。</span>该功能在<span
+            class="stressed_2">lv4</span>及以后解锁(详细信息可在用户信息的等级细则中查询)。
+        右键文件，在出现的菜单中点击<span class="stressed_1">分享</span>按钮，即可将该文件的分享码复制到剪切板，将分享码发送给其他人，即可让其他人获得分享文件夹内的内容（仅支持下载）
+        <span class="stressed_1">分享的文件夹内容会实时更新，若不想继续分享可将文件夹进行改名或者移动到其他目录后自己访问该浏览码的内容即可重置浏览码</span>。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(12) 目录跳转。</span>在上方功能区中点击显示的文件路径，即可跳转到其位置。
+    </p>
+    <h3 class="subhead">2.论坛</h3>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(1) 进入论坛。</span>点击上方<span class="stressed_1"><span
+                class="iconfont icon-Browser"></span>
+            论坛</span>(PC版， 手机版则只有<span class="stressed_1"><span class="iconfont icon-Browser"></span></span>)来进入论坛。
+        或者在网址栏输入目录为<span class="stressed_2"><a href="/forum" style="text-decoration: none">/forum</a></span>。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(2) 创建帖子。</span>该功能在<span
+            class="stressed_2">lv4</span>及以后解锁(详细信息可在用户信息的等级细则中查询)。
+        点击上方的 <span class="stressed_1"><span
+                class="iconfont icon-create"></span>创建帖子</span>按钮，在跳出的窗口中输入帖子的名称和帖子的内容后<span
+            class="stressed_1">后续不能修改</span>
+        ，点击确定，即可创建帖子。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(3) 评论帖子。</span>点击帖子进入后，向下滑动，点击<span
+            class="stressed_1">发表我的评论</span>按钮，
+        在弹出的窗口中输入你想发送的评论后点击<span class="stressed_1">发布</span>即可发布评论。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(4) 删除帖子。</span>在帖子列表界面右键帖子，在弹出的菜单中点击<span
+            class="stressed_1">删除</span>
+        即可删除该帖子，<span class="stressed_1">前提这是你的帖子，或者你是lv9的管理员，所以若你的帖子消失了，很大概率是帖子内容违规被管理员删除了</span>。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(5) 删除评论。</span>在评论列表界面右键评论，在弹出的菜单中点击<span
+            class="stressed_1">删除</span>
+        即可删除该评论，<span class="stressed_1">前提这是你的评论，或者你是lv9的管理员，所以若你的评论消失了，很大概率是评论内容违规被管理员删除了</span>。
+    </p>
+    <h3 class="subhead">3.浏览</h3>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(1) 进入输入浏览码界面。</span>该按钮位于论坛菜单第二个位置，点击后输入你想要查看的文件夹的<span
+            class="stressed_1">分享码</span>
+        后点击提交， 即可进入文件夹目录进行下载<span class="stressed_1">仅支持下载</span>。
+    </p>
+    <h3 class="subhead">4.协作</h3>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(1) 进入协作。</span>点击上方<span class="stressed_1"><span
+                class="iconfont icon-Collaboration"></span>
+            协作</span>(PC版， 手机版则只有<span class="stressed_1"><span
+                class="iconfont icon-Collaboration"></span></span>)来进入协作。
+        或者在网址栏输入目录为<span class="stressed_2"><a href="/collaboration"
+                style="text-decoration: none">/collaboration</a></span>。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(2) 创建项目。</span>点击上方<span class="stressed_1"><span
+                class="iconfont icon-create"></span>创建项目</span>
+        按钮，在弹出的窗口中输入<span class="stressed_1">项目名称（之后不可修改）</span>，确认后点击<span class="stressed_1">提交</span>即可创建项目。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(3) 修改留言板。</span>在项目列表中点击项目，再在项目详情窗口中点击<span
+            class="stressed_1">留言板</span>，再在
+        跳出的留言板窗口中输入想要给这个项目其他成员的留言后点击<span class="stressed_1">提交</span>，如果窗口返回到了项目详情页面就代表着留言板提交成功！
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(4) 成员管理。</span>在项目列表中点击项目，再在项目详情窗口中点击<span
+            class="stressed_1">成员管理（该按钮只会在项目管理员的项目详情页面出现）</span>
+        ，在跳出的成员窗口的右半边就可以管理项目成员的权限<span class="stressed_2">左键</span><span class="stressed_1">点击用户名,是将成员向左移动</span>，<span
+            class="stressed_2">右键</span><span class="stressed_1">点击用户名,是将成员向右移动</span>
+        ，若该用户已经是成员,再次右键用户名就是将该用户<span class="stressed_1">踢出</span>该项目。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(5) 加入码。</span>在项目列表中点击项目，再在项目详情窗口中点击<span
+            class="stressed_1">成员管理（该按钮只会在项目管理员的项目详情页面出现）</span>
+        ，在跳出的成员窗口的左半边就可以看到<span
+            class="stressed_1">加入码：****************</span>的字样，点击这个字样，它就会变成该项目的加入码，再次点击，即可触发复制。将加入码发送给别人，在左侧菜单栏中点击<span
+            class="stressed_1"><span class="iconfont icon-project"></span>项目</span>
+        (PC版， 手机版则只有<span class="stressed_1"><span
+                class="iconfont icon-project"></span></span>)，即可进入输入界面，输入加入码之后返回项目列表就能看到该项目了。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(6) 删除项目。</span>在项目列表中右键项目，在跳出的菜单栏中点击<span
+            class="stressed_1">删除</span>
+        按钮，再三确认之后即可删除项目<span class="stressed_1">前提你是该项目的策划，或者你是lv9的管理员，所以若你的项目消失了，很大概率是项目内容违规被管理员删除了</span>。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(7) 进入项目云盘。</span>在项目详情界面点击<span
+            class="stressed_1">进入项目云盘</span>按钮，即可进入项目云盘。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(8) 创建文件夹。</span>点击上方<span class="stressed_1"><span
+                class="iconfont icon-new_floder"></span></span>
+        在跳出的窗口中输入想要创建文件夹的名字，点击<span class="stressed_1">创 建</span>即可创建文件夹。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(9) 创建网络链接。</span>点击上方<span class="stressed_1"><span
+                class="iconfont icon-link"></span></span>
+        在跳出的窗口中输入你想对这个网络链接的称呼和这个网络链接的具体网址<span class="stressed_1">请确认该网址为全部内容，比如你所打的网址是否最前方为http或https，这很重要！！！</span>
+        确认完你的所有输入之后再点击<span class="stressed_1">创 建</span>即可创建网络链接。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(10) 从用户云盘移动文件到项目云盘。</span>点击上方<span
+            class="stressed_1"><span class="iconfont icon-movein"></span></span>
+        在跳出的窗口中选择你要移动到<span class="stressed_1">项目云盘</span>的文件，点击后即可移动。<span class="stressed_1">移动完成之后窗口会自己消失</span>。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(11) 上传文件。</span>点击上方<span class="stressed_1"><span
+                class="iconfont icon-upload"></span></span>
+        在跳出的窗口中选择你要上传的文件(可以上传多个)，确认后选择窗口会消失，上传进度条 <span class="stressed_1">在上方工具按钮的下面，那条分割线即为进度条</span>进度条跑完之后上传即为成功！
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(12) 删除文件(文件夹)。</span>右键文件，在跳出的菜单栏中点击<span
+            class="stressed_1">删除</span>按钮后，再三确认，确定该文件是你要删除的
+        文件(文件夹)之后再点击 <span class="stressed_1">确定</span>即可删除文件(文件夹)。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(13) 重命名文件(文件夹)。</span>右键文件，在跳出的菜单栏中点击<span
+            class="stressed_1">重命名</span>按钮后，输入你想要将该文件重命名后的
+        名字，确认你的名字无误后点击<span class="stressed_1">提 交</span>即可完成重命名。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(14) 移动文件(文件夹)。</span>
+        右键文件，在跳出的菜单栏中点击<span class="stressed_1">移动</span>按钮，在跳出的窗口中选择你要移动到的位置进行点击，即可完成移动。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(15) 下载文件。</span>正常文件点击文件名即可触发下载<span
+            class="stressed_1">图片类型的文件需要右键文件，在跳出的菜单栏中点击下载按钮才能触发</span>
+        下载的文件可以在浏览器的默认下载路径中找到， <span class="stressed_1">ctrl + J</span> 在绝大数浏览器中可以打开下载任务。这之中可能有方法到达你的下载目录。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(16) 预览文件。</span>该功能在<span
+            class="stressed_2">lv5</span>及以后解锁(详细信息可在用户信息的等级细则中查询)。
+        普通的pdf,mp3,mp4文件右键文件，在跳出的菜单栏中点击<span class="stressed_1">预览</span>即可触发预览（前提是你的浏览器支持播放这些文件）。特殊的<span
+            class="stressed_1">图片</span>类型文件只需点击文件名即可触发预览。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(17) 目录跳转。</span>在上方功能区中点击显示的文件路径，即可跳转到其位置。
+    </p>
+    <h3 class="subhead">5.用户信息界面</h3>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(1) 进入用户信息界面。</span>点击上方<span class="stressed_1"><span
+                class="iconfont icon-user"></span>
+            用户名</span>(PC版， 手机版则只有<span class="stressed_1"><span class="iconfont icon-user"></span></span>)来进入用户信息界面。
+        或者在网址栏输入目录为<span class="stressed_2"><a href="/user_information"
+                style="text-decoration: none">/user_information</a></span>。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(2) 退出登录。</span>点击信息栏下方<span class="stressed_1">退出登录
+        </span>按钮来执行退出登录。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(3) 修改用户名。</span>点击信息栏中的<span class="stressed_1">名字文字样式
+        </span>，在跳出的窗口中输入想要的新名字，点击提交即可完成修改。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(4) 修改密码。</span>点击信息栏下方<span class="stressed_1">修改密码
+        </span>按钮，在跳出的窗口中输入<span class="stressed_1">旧密码</span><span class="stressed_1">新密码</span><span
+            class="stressed_1">确认新密码</span>
+        ，在保证新密码和确认新密码内容相同的情况下，点击提交即可完成修改。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(5) 修改邮箱。</span>点击信息栏中的<span class="stressed_1">邮箱文字样式
+        </span>，在跳出的窗口中输入<span class="stressed_1">邮箱</span>点击发送验证码，若验证码正确即可点击提交，完成修改。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(6)
+            手机版UI。</span>相比较于电脑版的UI，手机版没有右侧的窗口跳出，而是加载到了新的输入路由，但是两者相差不大，可以放心使用。
+    </p>
+    <h3 class="subhead">6.兑换</h3>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(1) 进入输入兑换码界面。</span>在用户信息界面，信息栏下方点击<span
+            class="stressed_1">
+            兑换</span>按钮来进入输入兑换码界面。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(2) 兑换。</span>在输入兑换码界面，输入你的兑换码之后，你就可以获得<span
+            class="stressed_1">时间加速</span>的奖励。
+    </p>
+    <h3 class="subhead">7.其他</h3>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(1) 提交bug和建议。</span>如果发现bug或者想要提交建议，可以联系主页下方<span
+            class="stressed_1">关于星阁</span>
+        中的任何人来进行提交。
+    </p>
+    <p class="content">
+        <span class="space">4</span><span class="subsubhead">(2) 封号与解封。</span>若利用bug执行什么违规行为，或发布违规内容。<span
+            class="stressed_1">情节严重</span>
+        可能会予以<span class="stressed_2">封号</span>处理。 当你发现自己的正好被封禁了，可以联系管理员，说明情况之后。管理员会对你进行相应处理，例如：<span
+            class="stressed_2">解封</span>。
+    </p>
+</div>
+<script src="{{ url_for('static', filename='JS/document.js') }}"></script>
+<script>
+    const numDots = 0;
+</script>
+{% endblock %}

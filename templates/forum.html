@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block title %}论坛{% endblock %}
+{% block head %}
+	<link rel="stylesheet" href="{{ url_for('static',filename='CSS/forum.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div id="Gray">
+        <div id="CreatePostLightBox">
+            <label>
+                <h1 style="color: #1e56a0">请输入帖子标题：</h1>
+                <input type="text" id="PostTitleInput">
+            </label>
+            <label style="position: absolute; top: 180px;width: 100%">
+                <h1 style="color: #1e56a0">请输入帖子内容：</h1>
+                <textarea name="" id="PostContent" cols="30" rows="10"></textarea>
+            </label>
+            <button id="CancelButton" onclick="hidden_create_post()">取消</button>
+            <button id="SubmitButton" onclick="submit_create_post()">创建</button>
+            <h3 id="PostCreateLight">提示</h3>
+        </div>
+        <div id="CreateCommentLightBox">
+            <label style="position: absolute;width: 100%">
+                <h1 style="color: #1e56a0">请输入评论：</h1>
+                <textarea name="" id="CommentEdit" cols="30" rows="10"></textarea>
+            </label>
+            <button id="CancelButton" onclick="hidden_create_comment()" style="bottom: 15px; right: 80px">取消</button>
+            <button id="SubmitButton" onclick="submit_create_comment()" style="bottom: 10px; right: 10px">发布</button>
+        </div>
+    </div>
+    <div id="Menu">
+        <ul>
+            <li><button class=" menuBtn" id="ToForumHomeButton" onclick="ToForum()"><span class="iconfont icon-Browser menuSpan"></span><t style="font-weight: bold"> 论坛</t></button></li>
+            <li><button class=" menuBtn"  id="ToBrowseCode" onclick="ToBrowseCode()"><span class="iconfont icon-share menuSpan"></span><t style="font-weight: bold"> 浏览</t></button></li>
+            <li><button id="ToUserInformation" class="menuBtn" onclick="ToUserInformation()"><span class="iconfont icon-user menuSpan"></span> <t id="MenuUserName"> {{ username }}</t></button></li>
+        </ul>
+    </div>
+    <div id="PostRightMenu">
+        <ul>
+            <li><button>删除</button></li>
+        </ul>
+    </div>
+    <div id="CommentRightMenu">
+        <ul>
+            <li><button>删除</button></li>
+        </ul>
+    </div>
+    <div id="TopFunctionBox">
+        <button id="CreatePostButton" onclick="show_create_post()"><span class="iconfont icon-create"></span> 创建帖子</button>
+        <label id="">
+            <button class="iconfont icon-magnifying-glass" id="FindForumButton" onclick="ShowFindForumInput()"></button>
+            <input type="text" id="FindForumInput" onkeydown="find_post(event)">
+        </label>
+    </div>
+    <div id="BottomPostsBox">
+        {% for i in posts %}
+            <div class="PostBox" onclick="ToPostContent({{ i['id'] }})" post_id="{{ i['id'] }}">
+                <h1 style="color: #163172">{{ i['post']['title'] }}</h1>
+                <img src='{{ url_for('static', filename="levels/lv" + i['author']['level'] | string + ".png") }}' alt="lv{{ i['author']['level'] }}" class="PostLevelImg">
+                <h3 style="display: inline;color: #1e56a0"> {{ i['author']['name'] }}</h3><br>
+                <span style="color: #d6e4f0;font-size: 12px;font-weight: bold">发布日期：{{ i['time'] }}</span>
+            </div>
+        {% endfor %}
+    </div>
+    <div id="PostContentBackground">
+        <button id="Back" class="iconfont icon-left-arrow" onclick="ToPostList()"></button>
+        <div id="PostContentBox">
+            <h1 id="PostTitleH1"></h1>
+            <div>
+                <img src="" alt="" id="PostAuthorImg">
+                <h2 id="PostAuthorH2"></h2>
+            </div>
+            <h3 id="PostTimeH3"></h3>
+            <div id="ContentBox"></div>
+            <button id="ToCreateCommentButton">发表我的评论</button>
+        </div>
+        <div id="PostCommentBox"></div>
+    </div>
+    <script src="{{ url_for('static',filename='JS/forum.js') }}"></script>
+    <script>
+        let Posts = {{ posts | safe }}
+        numDots = 0; // 生成小白点的数量
+
+    </script>
+{% endblock %}

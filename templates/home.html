@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block title %}主页{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/home.css') }}">
+{% endblock %}
+{% block body %}
+    {% if light_announcements %}
+        <div id="Gray"></div>
+        <div id="announcementsLight">
+            <button id="CloseAnnouncementLight" onclick="hidden_announcement_light()">×</button>
+            <br><br><br>
+            <h1>你有新的未查看公告！</h1>
+        </div>
+    {% endif %}
+    <div class="container">
+        <div class="box" style="background-color: #f6f6f6">
+            <h1 id="Title_First">欢迎来到<span style="color: #1e56a0">星阁</span>！</h1>
+            <p id="P_First"><span style="color: #1e56a0">星阁</span>使用<span style="color: #1e56a0">Flask web</span>框架编写,<br>
+                下载速度完全取决于<span style="color: #1e56a0">您的网速</span>和<span style="color: #1e56a0">服务器的带宽</span>。
+                <br>是数据存储的<span style="color: #1e56a0">不二之选</span>！</p>
+        </div>
+        <div class="box" style="background-color: #1e56a0">
+            <h1 id="announcementsBoxTitle">公告</h1>
+            {% if announcements | length > 0 %}
+                <div id="announcementsTextBox">
+                    {% for i in announcements %}
+                        <div class="announcements">
+                            <h1>{{ i[:-4] }}</h1>
+                            <p>{{ announcements[i] | replace("\n", "<br>" | safe) }}</p>
+                        </div>
+                    {% endfor %}
+                    <h3 style="width: 100%; height: 30px; margin: 100px 0 30px 0; text-align: center;color: #f6f6f6">没有更多公告了~</h3>
+                </div>
+            {% else %}
+                <h1 style="color: #d6e4f0;font-size: 60px;width: 100vw;height: calc(100vh - 400px);text-align: center">暂无公告</h1>
+            {% endif %}
+        </div>
+        <div class="box" style="background-color: #f6f6f6">
+            <h1 class="Title" style="color: black">云盘</h1> <br>
+            <p class="Text" style="color: black">在星阁，你可以上传自己的文件，不会有人看到 <br>
+                                当然你也可以分享自己的文件夹给别人， <br>
+                                来让别人获取你的资源。 <br>
+                                这一切权力都在你身上。
+            </p>
+            <img src='{{ url_for("static", filename="Photo/Cloud.png") }}' alt="Cloud" class="ShowImg" style="box-shadow: #1e56a0 0 0 10px">
+        </div>
+        <div class="box" style="background-color: #1e56a0">
+            <img src='{{ url_for("static", filename="Photo/Forum.png") }}' alt="Forum" class="ShowImg" style="box-shadow: #f6f6f6 0 0 10px">
+            <h1 class="Title" style="color: #f6f6f6">论坛</h1> <br>
+            <p class="Text" style="color: #f6f6f6">在星阁，你可以创建自己的帖子和对帖子进行评论， <br>
+                                注意不要太过火！当心被管理员封号！ <br>
+                                通过"$"将分享码引起来 <br>
+                                可以使分享码成为一个快捷点击的链接<br>
+                                来直达你的分享文件夹 。<br>
+        </div>
+        <div class="box" style="background-color: #f6f6f6">
+            <h1 class="Title" style="color: black">协作</h1> <br>
+            <p class="Text" style="color: black">在星阁，你可以通过创建项目来 <br>
+                                让更多人来与你一起搭建一个 <br>
+                                属于你们自己的世界。不同的人与人之间的协作 <br>
+                                一定能带来很多的惊喜！
+            </p>
+            <img src='{{ url_for("static", filename="Photo/Collaboration.png") }}' alt="Collaboration" class="ShowImg" style="box-shadow: #1e56a0 0 0 10px">
+        </div>
+        <div class="box" style="background-color: #1e56a0">
+            <h1 id="AboutTitle">关于星阁</h1>
+            <p id="AboutText">
+                项目成立时间:2024年5月30日 <br>
+                作者：AprilQM <br>
+                测试人员：AprilQM， ZR， YueYan， WYJ.， WuAD<br>
+                技术人员：AprilQM， LYF， Zhale <br>
+                版本:{{ version }}<br>
+                配色:#163172 #1e56a0 #d6e4f0 #f6f6f6 <br>
+                web框架:Flask <br>
+                数据库:SQLite <br><br><br>
+                项目历史： <br>
+                最开始的是后，它只是一个小想法，它的第一个名字叫做“云储存”，耗时一个星期，终于被放弃了，嘻嘻~ <br>
+                在那之后，又有了一个新的项目，名字叫做“朝花”。朝花算是比较成功的，功能基本完善但是并没有什么出彩的地方 <br>
+                再加上长时间的不维护，导致我不想去重新读朝花的代码来进行更新，嘻嘻~ <br>
+                所以我决定写一个更加完善，代码更加简洁的程序，于是便有了“星阁”。
+            </p>
+        </div>
+    </div>
+    <script>
+        const numDots = 0;
+        function hidden_announcement_light(){
+            $id("announcementsLight").style.display = 'none';
+            $id("Gray").style.display = 'none'
+        }
+    </script>
+{% endblock %}

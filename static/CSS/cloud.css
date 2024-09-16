@@ -1,0 +1,621 @@
+body {
+    background-color: #f6f6f6;
+    padding: 0;
+}
+
+#menu {
+    border-top: #eff0f1 1px solid;
+    background-color: #163172;
+    height: calc(100% - 60px);
+    width: 200px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+}
+
+#menu li {
+    margin: 0;
+    padding: 0;
+    height: 100px;
+}
+
+#menu button {
+    padding: 20px 0 20px 0;
+    border: none;
+    font-size: 30px;
+    width: 100%;
+    background-color: initial;
+    color: #f6f6f6;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#MenuLogo {
+    width: 90px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    border-radius: 20%;
+}
+
+.UIBox {
+    position: fixed;
+    height: calc(100% - 60px);
+    width: calc(100% - 200px);
+    left: 200px;
+    top: 60px;
+}
+
+#ToUserInformation {
+    position: fixed;
+    text-decoration: none;
+    width: 200px;
+    color: #f6f6f6;
+    font-size: 27px;
+    font-weight: bold;
+    bottom: 30px;
+    text-align: center;
+}
+
+#TransmissionUI {
+    display: none;
+}
+
+.FunctionsBox {
+    width: 100%;
+    height: 100px;
+    border-bottom: #1e56a0 1px solid;
+}
+
+#FilesBox {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 101px);
+    top: 101px;
+    overflow: auto;
+}
+
+.FilesButton {
+    width: calc(100vw - 300px);
+    background-color: initial;
+    font-size: 30px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 10px 20px 0 20px;
+    font-weight: bold;
+    color: #1e56a0;
+    text-decoration: none;
+}
+
+.FilesButton:hover {
+    color: #163172;
+}
+
+.FilesButton span {
+    font-weight: normal;
+    font-size: 80px;
+    margin: 0 80px 0 0;
+}
+
+.FilesFunctionButton {
+    background-color: initial;
+    border: none;
+    color: #d6e4f0;
+    transition: 0.3s;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.FunctionButtonBox {
+    position: absolute;
+    right: 100px;
+    transform: translateY(-30px);
+}
+
+.FunctionButtonBox button:hover {
+    color: #1e56a0;
+}
+
+.FunctionButtons {
+    background-color: #1e56a0;
+    color: #f6f6f6;
+    border: #1e56a0 3px solid;
+    border-radius: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.FunctionButtons:hover {
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+
+#FunctionButtonsBox {
+    position: absolute;
+    left: 10px;
+    top: 40px;
+}
+
+#PathLightBox {
+    position: absolute;
+    left: 200px;
+    bottom: calc(100% - 100px);
+    word-wrap: anywhere;
+}
+
+#UnderLight {
+    color: #d6e4f0;
+    text-align: center;
+    margin: 80px 0 30px 0;
+    width: 100%;
+}
+
+.PathButton {
+    background-color: initial;
+    border: none;
+    color: #1e56a0;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.PathButton:hover {
+    color: #163172;
+    transform: scale(1.1);
+}
+
+#PathH3 {
+    margin: 0;
+    display: inline;
+}
+
+#PathH3 button {
+    padding: 2px;
+}
+
+#PathH3Light {
+    margin: 0;
+    display: inline;
+}
+
+#PathH3Light button {
+    padding: 2px;
+}
+
+#CreateDirBox {
+    height: 413px;
+}
+
+#NewDirNameInput {
+    width: 300px;
+    position: absolute;
+    top: 160px;
+    left: 30px;
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    font-size: 18px;
+    color: #1e56a0;
+}
+
+#NewDirNameInput:focus {
+    outline: none;
+    /* 设置选中时的轮廓样式 */
+    background-color: initial;
+    /* 设置选中时的背景色 */
+}
+
+#NewDirNameLight {
+    position: absolute;
+    top: 180px;
+    left: 30px;
+    color: #f6f6f6;
+}
+
+.SubmitButton {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    bottom: 30px;
+    right: 30px;
+    border: #1e56a0 2px solid;
+    background-color: #1e56a0;
+    font-size: 20px;
+    color: #f6f6f6;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.SubmitButton:hover {
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+
+.CancelButton {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    bottom: 30px;
+    right: 130px;
+    border: none;
+    background-color: #f6f6f6;
+    font-size: 20px;
+    color: #1e56a0;
+    cursor: pointer;
+}
+
+.LightBox {
+    width: 370px;
+    position: fixed;
+    background-color: #f6f6f6;
+    z-index: 20;
+    top: calc(50% - 250px);
+    left: calc(50% - 200px);
+    color: #1e56a0;
+    display: none;
+}
+
+#CreateLinkBox {
+    height: 500px;
+}
+
+#CreateLinkBox input {
+    width: 300px;
+    position: absolute;
+    left: 30px;
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    font-size: 18px;
+    color: #1e56a0;
+}
+
+#CreateLinkBox input:focus {
+    outline: none;
+    /* 设置选中时的轮廓样式 */
+    background-color: initial;
+    /* 设置选中时的背景色 */
+}
+
+#NewLinkNameInput {
+    top: 160px;
+}
+
+#NewLinkWebInput {
+    top: 280px;
+}
+
+#NewLinkNameLight {
+    position: absolute;
+    left: 30px;
+    top: 170px;
+    color: #f6f6f6;
+}
+
+#RenameBox {
+    height: 413px;
+}
+
+#MoveBox {
+    font-size: 15px;
+    padding: 20px;
+    height: 413px;
+    width: 400px;
+}
+
+#FilesTree {
+    border: #222222 2px solid;
+    background-color: #fff;
+    height: 300px;
+    width: 400px;
+    position: absolute;
+    left: 20px;
+    overflow: auto;
+    line-height: 1.5;
+    white-space: pre;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#RenameInput {
+    width: 300px;
+    position: absolute;
+    top: 160px;
+    left: 30px;
+    border: none;
+    border-bottom: 2px solid #1e56a0;
+    background-color: initial;
+    font-size: 18px;
+    color: #1e56a0;
+}
+
+#RenameInput:focus {
+    outline: none;
+    /* 设置选中时的轮廓样式 */
+    background-color: initial;
+    /* 设置选中时的背景色 */
+}
+
+#RenameLight {
+    position: absolute;
+    top: 180px;
+    left: 30px;
+    color: #f6f6f6;
+}
+
+#UploadButton {
+    position: absolute;
+    top: 0;
+    left: 123px;
+}
+
+#TransmissionBottom {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 101px);
+    top: 101px;
+    overflow: auto;
+}
+
+#DownloadListBox {
+    background-color: #ffffff;
+    width: calc(96% - 60px);
+    height: calc(96% - 140px);
+    position: absolute;
+    top: calc(2% + 80px);
+    left: 2%;
+    border: #1e56a0 2px solid;
+    padding: 30px;
+}
+
+#StartDownloadButton {
+    background-color: #1e56a0;
+    color: #f6f6f6;
+    border: #1e56a0 2px solid;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 2%;
+    border-radius: 3px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+#StartDownloadButton span {
+    font-size: 33px;
+    background-color: initial;
+}
+
+#StartDownloadButton:hover {
+    background-color: #f6f6f6;
+    color: #1e56a0;
+}
+
+#StartDownloadButton:hover span {
+    color: #1e56a0;
+}
+
+#DownloadUnderLight {
+    width: 100%;
+    text-align: center;
+    color: #d6e4f0
+}
+
+.OneDownloadBox {
+    width: calc(100% - 20px);
+    margin: 0 0 30px 0;
+}
+
+.OneDownloadTitle {
+    font-size: 20px;
+    color: #1e56a0;
+    font-weight: bold;
+    width: 90%;
+}
+
+.OneDownloadDelete {
+    position: absolute;
+    right: 50px;
+    background-color: initial;
+    color: #d6e4f0;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.OneDownloadDelete:hover {
+    color: #1e56a0;
+}
+
+.menuBtn {
+    font-size: 50px;
+}
+
+.node {
+    cursor: pointer;
+}
+
+#FilesRightMenu {
+    box-shadow: #222222 0 0 5px;
+    width: 0;
+    transition: width 0.3s;
+    z-index: 900;
+    position: absolute;
+    background-color: #fff;
+    height: auto;
+    overflow: hidden;
+}
+
+.FilesRightMenuButtons {
+    white-space: nowrap;
+    width: 100%;
+    border: none;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #1e56a0;
+    cursor: pointer;
+    margin: 2px 0 0 0;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.FilesRightMenuButtons:hover {
+    color: #163172;
+    font-size: 25px;
+}
+.AButton {
+    text-decoration: none;
+}
+
+.AButton:hover {
+    color: #163172;
+}
+
+#Gray {
+    position: fixed;
+    width: 100%;
+    height: 1000%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+#MoveCancelButton {
+    border: none;
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+    background-color: initial;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e56a0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#MoveCancelButton:hover {
+    color: #163172;
+}
+
+#UploadLightBox {
+    background-color: rgba(30, 86, 160, 0.7);
+    position: fixed;
+    width: calc(100% - 200px);
+    height: calc(100% - 60px);
+    bottom: 0;
+    right: 0;
+    z-index: 30;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+#UploadLightBoxSpan {
+    color: white;
+    font-size: 200px;
+    display: block;
+}
+
+/*手机适配*/
+@media screen and (max-width: 1220px) {
+
+    #RenameBox,
+    #MoveBox,
+    #CreateLinkBox,
+    #CreateDirBox {
+        width: calc(100vw - 20px);
+        left: 10px;
+        height: calc(100vh - 30px);
+        top: 15px;
+    }
+
+    .OneDownloadDelete {
+        right: 10px;
+    }
+
+    #menu {
+        width: 30px;
+    }
+
+    #menu t {
+        display: none;
+    }
+
+    .menuBtn {
+        font-size: 20px;
+    }
+
+    #ToUserInformation {
+        width: 26px;
+        word-wrap: anywhere;
+        font-size: 15px;
+    }
+
+    .UIBox {
+        left: 35px;
+        width: calc(100% - 35px);
+    }
+
+    .FilesButton {
+        font-size: 15px;
+        width: calc(100vw - 80px);
+        white-space: nowrap;
+        text-align: left;
+    }
+
+    .FilesButton span {
+        font-size: 30px;
+        margin: 0 10px 0 0;
+    }
+
+    .FilesFunctionButton {
+        font-size: 12px;
+        padding: 1px;
+    }
+
+    .FunctionButtonBox {
+        position: absolute;
+        right: 10px;
+        white-space: nowrap;
+        transform: translateY(-20px);
+    }
+
+    #PathH3 {
+        font-size: 10px;
+    }
+
+    #PathH3 button {
+        font-size: 10px;
+    }
+
+    #PathH3Light {
+        font-size: 10px;
+    }
+
+    #PathH3Light button {
+        font-size: 10px;
+    }
+
+    #MenuUserName {
+        display: none;
+    }
+    #UploadLightBox {
+        width: calc(100% - 30px);
+    }
+}

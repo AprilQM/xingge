@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}等级细则{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/information_ui.css') }}">
+    <style>
+        .levelXZ{
+            padding: 0 30px 0 30px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+	<div class="mainBox" style="overflow: auto;height: calc(100vh - 60px);top: 60px">
+        <h1 style="position: absolute;margin: 30px;font-size: 50px">等级细则</h1>
+        <div style="top: 80px;position: absolute;">
+            <p class="levelXZ">lv1：最基础的等级，拥有批量上传和单项下载云盘文件的权限，下一级所需天数：4天</p>
+            <p class="levelXZ">lv2：拥有使用文件夹的权限，下一级所需天数：30天</p>
+            <p class="levelXZ">lv3：拥有批量下载的权限（下载的为压缩包），下一级所需天数：12天</p>
+            <p class="levelXZ">lv4：拥有分享文件夹的权限，创建帖子的权限，移动文件位置的权限，下一级所需天数：63天</p>
+            <p class="levelXZ">lv5：拥有预览图片,pdf,mp3的权限，下一级所需天数：126天</p>
+            <p class="levelXZ">lv6：开启邀请码，邀请码CD：7天，下一级所需天数：254天</p>
+            <p class="levelXZ">lv7：邀请码CD：3天，下一级所需天数：510天</p>
+            <p class="levelXZ">lv8：普通用户可达最高等级，邀请码CD：1天</p>
+            <p class="levelXZ">lv9：管理员等级，拥有所有权限，邀请码cd：0天</p>
+            <p class="levelXZ">日常+1天，邀请1人且被邀请人绑定了邮箱+20天，网站四周可能会出现升级兑换码，找到可兑换天数</p>
+        </div>
+    </div>
+    <div style="position: absolute;top: 10000px;color: #f6f6f6;font-size: 30px"> 2</div>
+    <script>
+        const numDots = 300;
+    </script>
+{% endblock %}
